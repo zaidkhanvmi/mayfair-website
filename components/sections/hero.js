@@ -1,23 +1,23 @@
 import { Lock, Stethoscope, Truck } from "lucide-react";
-import Container from "./layout/Container";
+import Container from "../layout/Container";
 
 const Hero = () => {
     return (
         <>
             <section
-                className="w-full min-h-[330px] md:min-h-[260px] lg:min-h-[337px] 2xl:min-h-[560px] bg-cover bg-center flex items-center justify-start -mt-7"
+                className="w-full min-h-[330px] md:min-h-[260px] lg:min-h-[337px] 2xl:min-h-[560px] bg-cover bg-center flex items-center -mt-7"
                 style={{
                     backgroundImage: "url('/hero-bg.jpg')", // put image in /public
                 }}
             >
-                <Container>
-                    <div className="max-w-xl text-left">
-                        <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-[#12003a]">
+                <div className="max-w-[1140px] mx-auto w-full p-6">
+                    <div className="max-w-xl text-left mx-0 w-full">
+                        <h1 className="text-4xl md:text-[40px] 2xl:text-5xl font-semibold leading-tight text-[#12003a]">
                             Your weight loss experts <br />
                             in the heart of London
                         </h1>
 
-                        <p className="mt-4 text-lg text-[#2f2f2f]">
+                        <p className="mt-4 text-lg md:text-xl text-[#2f2f2f]">
                             UK based clinical team and pharmacy all in one place
                         </p>
 
@@ -25,7 +25,7 @@ const Hero = () => {
                             View Treatments
                         </button>
                     </div>
-                </Container>
+                </div>
             </section>
 
 
