@@ -15,9 +15,7 @@ export default function Document() {
         </Container>
         <Main />
         <NextScript />
-        {/* <Container>
-          <Footer />
-        </Container> */}
+        <Footer />
       </body>
     </Html>
   );

@@ -1,16 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Inter } from "next/font/google";
-import Hero from "@/components/sections/hero";
-import WeightLoss from "@/components/sections/weightLoss";
-import ThreeSteps from "@/components/sections/threeSteps";
-import OptimizeWeight from "@/components/sections/optimizeWeight";
-import Accreditations from "@/components/sections/accreditations";
+import Hero from "@/components/home/hero";
+import WeightLoss from "@/components/home/weightLoss";
+import ThreeSteps from "@/components/home/threeSteps";
+import OptimizeWeight from "@/components/home/optimizeWeight";
+import Accreditations from "@/components/home/accreditations";
 import TakeMeToTop from "@/components/utils/TakeMeToTop";
-import WeightLossClinic from "@/components/sections/weightLossClinic";
-import Testimonials from "@/components/sections/testimonials";
-import Faqs from "@/components/sections/faqs";
-import FreeConsultation from "@/components/sections/freeConsultation";
+import WeightLossClinic from "@/components/home/weightLossClinic";
+import Testimonials from "@/components/home/testimonials";
+import Faqs from "@/components/home/faqs";
+import FreeConsultation from "@/components/shared/freeConsultation";
 
 const inter = Inter({
   subsets: ["latin"],
