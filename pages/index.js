@@ -10,6 +10,7 @@ import TakeMeToTop from "@/components/utils/TakeMeToTop";
 import WeightLossClinic from "@/components/sections/weightLossClinic";
 import Testimonials from "@/components/sections/testimonials";
 import Faqs from "@/components/sections/faqs";
+import FreeConsultation from "@/components/sections/freeConsultation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function Home() {
       <WeightLossClinic />
       <Testimonials />
       <Faqs />
+      <FreeConsultation />
     </>
   );
 }
