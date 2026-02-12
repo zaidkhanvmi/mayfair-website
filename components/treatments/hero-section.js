@@ -5,7 +5,7 @@ const TreatmentHero = () => {
     return (
         <section className='my-14'>
             <Container>
-                <div className='flex flex-col gap-5 items-center px-12'>
+                <div className='flex flex-col gap-5 items-center md:px-12'>
                     <h1 className='text-[#160647] text-2xl md:text-[40px] lg:text-5xl text-center font-bold'>
                         Weight Loss Treatments
                     </h1>

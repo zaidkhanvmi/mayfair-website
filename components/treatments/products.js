@@ -45,7 +45,7 @@ const Products = () => {
             <Container>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch'>
                     {products_Data.map((item, index) => (
-                        <div key={index} className='shadow-xl rounded-2xl p-7.5 flex flex-col justify-between gap-4'>
+                        <div key={index} className='shadow-xl rounded-2xl border-[1px] border-gray-200 p-5 md:p-7.5 flex flex-col justify-between gap-4'>
                             <div className='flex flex-col gap-1'>
                                 <h2 className='text-2xl text-[#3c3c3c] font-bold text-center'>
                                     {item?.title}

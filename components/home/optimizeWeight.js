@@ -32,7 +32,7 @@ const OptimizeWeight = () => {
     return (
         <div className='my-10'>
             <Container>
-                <div className='flex flex-col gap-5 shadow-lg md:shadow-none rounded-2xl p-5'>
+                <div className='flex flex-col gap-5 shadow-lg md:shadow-none rounded-2xl p-3'>
                     <h3 className='text-2xl md:text-[40px] font-bold text-[#7b50c0] md:text-black text-center'>
                         Optimising Weight Loss
                     </h3>
@@ -46,7 +46,7 @@ const OptimizeWeight = () => {
 
                 <div className='mt-12 bg-none md:bg-white shadow-md'>
 
-                    <div className='grid grid-cols-1 gap-3 md:grid-cols-3'>
+                    <div className='grid grid-cols-1 gap-3 md:gap-0 md:grid-cols-3'>
                         {optimize_content.map((item, index) => (
                             <div
                                 key={index}

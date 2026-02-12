@@ -77,12 +77,12 @@ const Footer = () => {
 
             {/* Social */}
             <div className="md:col-span-2 mt-7">
-              <div className="p-6 flex flex-row items-center justify-start border-t-[1px] border-b-[1px] border-black">
+              <div className="py-5 md:p-6 flex flex-row items-center justify-start border-t-[1px] border-b-[1px] border-black">
                 <p className="font-bold text-lg text-[#160647] mr-2 md:mr-5">
                   Find us on
                 </p>
 
-                <div className="flex gap-3">
+                <div className="flex gap-2 md:gap-3">
                   <div className="bg-black p-3 cursor-pointer hover:bg-[#5b45a7] rounded">
                     <Facebook size={16} color="white" />
                   </div>
@@ -124,8 +124,12 @@ const Footer = () => {
           </p>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-5">
-            <span className="text-black/90 text-sm">Privacy and Cookies</span>
-            <span className="text-black/90 text-sm">© 2026 Mayfair Weight loss Clinic. All Rights Reserved.</span>
+            <span className="text-black/90 text-sm">
+              Privacy and Cookies
+            </span>
+            <span className="text-black/90 text-sm">
+              © 2026 Mayfair Weight loss Clinic. All Rights Reserved.
+            </span>
           </div>
         </div>
 

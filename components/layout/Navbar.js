@@ -1,16 +1,16 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
-import { ChevronLeft, ChevronRight, LogIn, MailOpen, Menu } from "lucide-react"
+import React, { useState } from "react"
+import { LogIn, MailOpen, Menu } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useRouter } from "next/router"
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [current, setCurrent] = useState(0);
 
-  const pathanme = usePathname();
+  const router = useRouter();
+  console.log(router.pathname);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -21,34 +21,9 @@ const Navbar = () => {
     { name: "Help & Support", path: "/help" },
   ];
 
-  const slides = [
-    "UK based clinical team",
-    "Dispensed from UK based pharmacy",
-    "Secure and Tracked Delivery",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length)
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [])
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length)
-  }
-
-  const prevSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    )
-  }
-
-
   return (
     <>
-      <div className="flex flex-row items-center justify-between pt-4">
+      <div className="flex flex-row items-center justify-between pt-4 gap-5">
 
         <Link href="/">
           <Image src="/logo.svg" width={190} height={100} alt="Mayfair-logo" />
@@ -66,8 +41,7 @@ const Navbar = () => {
 
             <button
               type="button"
-              onClick={() => alert("working fine!")}
-              className="text-base text-[#343a40] font-medium shadow-md flex items-center gap-2 rounded px-4 py-2 cursor-pointer transition-all hover:shadow-xl">
+              className="text-base text-[#343a40] font-medium md:shadow-md flex items-center gap-2 rounded px-2 md:px-4 py-2 cursor-pointer transition-all hover:shadow-xl">
               <span>
                 <LogIn size={15} color={"#f7a400"} />
               </span>
@@ -77,7 +51,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => setShowMenu(!showMenu)}
-              className="md:hidden z-50 bg-red-500">
+              className="md:hidden z-50">
               <Menu size={25} />
             </button>
 
@@ -95,10 +69,10 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {
         showMenu && (
-          <div className="absolute top-[90px] left-0 w-full bg-white shadow-lg z-50 md:hidden">
+          <div className="w-full bg-white shadow-lg z-50 md:hidden">
 
             {navItems.map((item, index) => {
-              const isActive = pathanme === item.path
+              const isActive = router.pathname === item.path
               return (
                 <Link
                   key={index}
@@ -116,29 +90,12 @@ const Navbar = () => {
         )
       }
 
-      {/* Mobile Menu */}
-      <div className="w-full md:hidden flex items-center justify-between rounded-full bg-[#160647] mt-4 p-1.5">
-
-        <button onClick={prevSlide} className="text-white">
-          <ChevronLeft size={20} />
-        </button>
-
-        <h2 className="text-white text-base text-center flex-1">
-          {slides[current]}
-        </h2>
-
-        <button onClick={nextSlide} className="text-white">
-          <ChevronRight size={20} />
-        </button>
-
-      </div>
-
       {/* Desktop Menu */}
       <div className="hidden w-full md:flex flex-row items-center justify-between rounded-full overflow-hidden bg-[#160647] mt-4">
         <div className="flex flex-row items-center">
           {
             navItems.map((item, index) => {
-              const isActive = item.name === "Home";
+              const isActive = router.pathname === item.path
               return (
                 <Link
                   key={index}

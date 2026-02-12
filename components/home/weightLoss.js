@@ -15,7 +15,7 @@ const WeightLoss = () => {
             </p>
           </div>
 
-          <div className="bg-cover bg-center w-[340px] h-[340px] rounded-2xl flex items-end justify-center pb-3 justify-self-center md:justify-self-end"
+          <div className="bg-cover bg-center w-full md:w-[340px] h-[340px] rounded-2xl flex items-end justify-center pb-3 justify-self-center md:justify-self-end"
             style={{
               backgroundImage: "url('/weightLossImg.png')",
             }}

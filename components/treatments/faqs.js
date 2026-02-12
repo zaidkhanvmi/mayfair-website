@@ -10,7 +10,7 @@ const TreatmenFaqs = () => {
                 </h2>
                 <div className='border-b-3 pb-2 border-[#5b45a7] w-[90%] mx-auto' />
 
-                <div className="flex flex-col md:flex-row items-start gap-10 mt-12">
+                <div className="flex flex-col-reverse md:flex-row items-start gap-10 mt-12">
 
                     <div className="flex flex-2 flex-col gap-8">
 
@@ -112,7 +112,7 @@ const TreatmenFaqs = () => {
 
                     </div>
 
-                    <div className="flex flex-1 flex-col gap-2 p-6 rounded-2xl shadow sticky top-10 self-start">
+                    <div className="flex flex-1 flex-col gap-2 p-6 rounded-2xl shadow md:sticky top-10 self-start">
                         <h3 className="text-[#160647] text-2xl font-medium mb-1">
                             Information on this page
                         </h3>

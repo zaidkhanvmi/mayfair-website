@@ -11,7 +11,7 @@ const ThreeSteps = () => {
 
                     <div className='flex flex-col md:flex-row items-start justify-center gap-12 py-5 relative'>
                         <div className='flex flex-col items-center justify-center gap-3 text-center py-5'>
-                            <Image src={"/one.png"} width={80} height={80} className='z-100 pb-10' />
+                            <Image src={"/one.png"} width={80} height={80} alt="image-alt" className='z-100 md:pb-10' />
                             <h3 className='text-[22px] font-bold text-[#160647]'>
                                 Complete the <br /> consultation form
                             </h3>
@@ -20,7 +20,7 @@ const ThreeSteps = () => {
                             </p>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-3 text-center py-5'>
-                            <Image src={"/two.png"} width={80} height={80} className='z-100 pb-10' />
+                            <Image src={"/two.png"} width={80} height={80} alt="image-alt" className='z-100 md:pb-10' />
                             <h3 className='text-[22px] font-bold text-[#160647]'>
                                 Select Treatment
                             </h3>
@@ -29,7 +29,7 @@ const ThreeSteps = () => {
                             </p>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-3 text-center py-5'>
-                            <Image src={"/three.png"} width={80} height={80} className='z-100 pb-10' />
+                            <Image src={"/three.png"} width={80} height={80} alt="image-alt" className='z-100 md:pb-10' />
                             <h3 className='text-[22px] font-bold text-[#160647]'>
                                 Confirm your order and make payment
                             </h3>

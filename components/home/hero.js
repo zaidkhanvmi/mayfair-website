@@ -1,9 +1,55 @@
-import { Lock, Stethoscope, Truck } from "lucide-react";
+"use client"
+
+import { ChevronLeft, ChevronRight, Lock, Stethoscope, Truck } from "lucide-react";
 import Container from "../layout/Container";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+    const [current, setCurrent] = useState(0);
+
+    const slides = [
+        "UK based clinical team",
+        "Dispensed from UK based pharmacy",
+        "Secure and Tracked Delivery",
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrent((prev) => (prev + 1) % slides.length)
+        }, 5000)
+
+        return () => clearInterval(interval)
+    }, [])
+
+    const nextSlide = () => {
+        setCurrent((prev) => (prev + 1) % slides.length)
+    }
+
+    const prevSlide = () => {
+        setCurrent((prev) =>
+            prev === 0 ? slides.length - 1 : prev - 1
+        )
+    }
+
     return (
         <>
+            {/* Mobile Slides */}
+            <div className="w-full md:hidden flex items-center justify-between bg-[#160647] mt-4 p-1.5 z-[100] relative">
+
+                <button onClick={prevSlide} className="text-white">
+                    <ChevronLeft size={20} />
+                </button>
+
+                <h2 className="text-white text-sm text-center flex-1">
+                    {slides[current]}
+                </h2>
+
+                <button onClick={nextSlide} className="text-white">
+                    <ChevronRight size={20} />
+                </button>
+
+            </div>
+
             <section
                 className="w-full min-h-[330px] md:min-h-[260px] lg:min-h-[337px] 2xl:min-h-[560px] bg-cover bg-center flex items-center -mt-7"
                 style={{
