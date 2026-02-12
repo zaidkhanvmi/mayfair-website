@@ -100,7 +100,8 @@ const Navbar = () => {
                 <Link
                   key={index}
                   href={item.path}
-                  className={`py-3 lg:py-5 px-5 lg:px-7.5 text-white text-base font-medium ${isActive ? "bg-[#491492] rounded-l-full" : ""} transition-all hover:bg-[#491492]`}
+                  className={`py-3 lg:py-5 px-5 lg:px-7.5 text-white text-base font-medium
+                    ${isActive ? "bg-[#491492]" : ""} transition-all hover:bg-[#491492]`}
                 >
                   {item.name}
                 </Link>

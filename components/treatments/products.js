@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../layout/Container';
 import Image from 'next/image';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 
 const Products = () => {
 
@@ -15,7 +16,8 @@ const Products = () => {
                 "1 pen = 4 weeks",
                 "Avg weight loss of ~15%"
             ],
-            price: "139"
+            price: "139",
+            path: "/treatment/wegovy"
         },
         {
             title: "Mounjaro",
@@ -26,7 +28,8 @@ const Products = () => {
                 "1 pen = 4 weeks",
                 "Avg weight loss of ~20%"
             ],
-            price: "189"
+            price: "189",
+            path: "/treatment/mounjaro"
         },
         {
             title: "Saxenda Injection",
@@ -36,7 +39,8 @@ const Products = () => {
                 "Saxenda (Liraglutide) is pre-filled a once-daily injection",
                 "Prescription medication licensed to treat weight loss",
             ],
-            price: "74.99"
+            price: "74.99",
+            path: "/treatment/sexanda"
         }
     ];
 
@@ -73,11 +77,13 @@ const Products = () => {
                                     </p>
                                 </div>
                             ))}
-                            <button className='text-base bg-[#5b45a7] text-white font-normal w-full rounded-full py-3 cursor-pointer'>
+                            <Link
+                                href={item.path}
+                                className='text-base bg-[#5b45a7] text-white font-normal w-full rounded-full py-3 cursor-pointer text-center'>
                                 View Treatment
-                            </button>
+                            </Link>
                             <p className='text-center font-semibold text-base'>
-                               From £{Number(item.price).toFixed(2)}
+                                From £{Number(item.price).toFixed(2)}
                             </p>
                         </div>
                     ))}

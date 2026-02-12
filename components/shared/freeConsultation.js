@@ -14,7 +14,7 @@ const FreeConsultation = () => {
                             Speak with our clinical team and get personalised advice.
                         </p>
                     </div>
-                    <button className='uppercase rounded-full bg-[#5b45a7] px-7 py-3 text-white cursor-pointer w-full md:w-full mt-5'>
+                    <button className='uppercase rounded-full bg-[#5b45a7] px-7 py-3 text-white cursor-pointer w-full md:w-auto mt-5'>
                         view treatments
                     </button>
                 </div>

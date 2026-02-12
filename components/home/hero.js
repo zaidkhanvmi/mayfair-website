@@ -51,7 +51,7 @@ const Hero = () => {
             </div>
 
             <section
-                className="w-full min-h-[330px] md:min-h-[260px] lg:min-h-[337px] 2xl:min-h-[560px] bg-cover bg-center flex items-center -mt-7"
+                className="w-full min-h-[330px] md:min-h-[260px] lg:min-h-[337px] 2xl:min-h-[550px] bg-cover bg-center flex items-center -mt-7"
                 style={{
                     backgroundImage: "url('/hero-bg.jpg')", // put image in /public
                 }}

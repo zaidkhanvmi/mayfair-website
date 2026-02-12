@@ -36,7 +36,7 @@ const OptimizeWeight = () => {
                     <h3 className='text-2xl md:text-[40px] font-bold text-[#7b50c0] md:text-black text-center'>
                         Optimising Weight Loss
                     </h3>
-                    <p className='text-center md:text-left text-base font-normal leading-8 text-[#595959] '>
+                    <p className='text-center md:text-left text-base font-normal leading-8 text-[#595959]'>
                         The Mayfair weight loss clinic team has spent years studying and treating obesity, so we understand how to provide effective and practical weight loss solutions to our patients to help them succeed on their weight loss journey. We have combined the latest clinical evidence and years of knowledge in weight management to design a bespoke online consultation process. The online consultation along with the expertise of our clinical team enables us to recommend and support you with appropriate and effective management treatments.
                     </p>
                     <p className='text-base text-center md:text-left font-normal text-[#595959] '>
@@ -51,21 +51,21 @@ const OptimizeWeight = () => {
                             <div
                                 key={index}
                                 onClick={() => setSelectedIndex(index)}
-                                className={`md:border-[1px] border-[#b9b9b9] px-7.5 py-5 flex items-center justify-start md:justify-center gap-2 cursor-pointer hover:bg-[#160647] transition-all delay-75 ${selectedIndex === index ? 'bg-[#8d69c9] md:bg-[#160647] text-white' : 'bg-[#f5f4f4] md:hover:bg-[#160647] hover:text-white'} rounded-full md:rounded-none`}
+                                className={`group md:border-[1px] border-[#b9b9b9] px-7.5 py-5 flex items-center justify-start md:justify-center gap-2 cursor-pointer hover:bg-[#160647] transition-all delay-75 ${selectedIndex === index ? 'bg-[#8d69c9] md:bg-[#160647] text-white' : 'bg-[#f5f4f4] md:hover:bg-[#160647] hover:text-white'} rounded-full md:rounded-none`}
                             >
                                 <div
                                     className={`p-0.5 rounded font-bold ${selectedIndex === index ? 'text-[#160647] bg-white' : 'bg-[#a3a3a3] text-white'}`}>
                                     <Check size={18} />
                                 </div>
                                 <h3
-                                    className={`text-lg font-bold ${selectedIndex === index ? "text-white" : "text-black"}`}>
+                                    className={`text-lg font-bold transition delay-75 ${selectedIndex === index ? "text-white" : "text-black group-hover:text-white"}`}>
                                     {item.title}
                                 </h3>
                             </div>
                         ))}
                     </div>
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 items-start mt-5 gap-y-5 md:gap-y-0 p-5 md:p-12'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 items-start mt-5 gap-y-5 md:gap-y-0 gap-x-0 md:gap-x-12 p-5 md:p-12'>
                         <div className='flex flex-col gap-7 order-2 md:order-1'>
                             <h3 className='text-2xl md:text-3xl text-[#14ac7b] font-bold text-center md:text-start'>
                                 {optimize_content[selectedIndex].title}
