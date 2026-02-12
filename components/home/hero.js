@@ -10,18 +10,18 @@ const Hero = () => {
                     backgroundImage: "url('/hero-bg.jpg')", // put image in /public
                 }}
             >
-                <div className="max-w-[1140px] mx-auto w-full p-6">
+                <div className="max-w-[1140px] mx-auto w-full p-6 ">
                     <div className="max-w-xl text-left mx-0 w-full">
-                        <h1 className="text-4xl md:text-[40px] 2xl:text-5xl font-semibold leading-tight text-[#12003a]">
+                        <h1 className="text-center md:text-left text-2xl md:text-[40px] 2xl:text-5xl font-semibold leading-tight text-[#12003a]">
                             Your weight loss experts <br />
                             in the heart of London
                         </h1>
 
-                        <p className="mt-4 text-lg md:text-xl text-[#2f2f2f]">
+                        <p className="text-center md:text-left mt-4 text-lg md:text-xl text-[#2f2f2f]">
                             UK based clinical team and pharmacy all in one place
                         </p>
 
-                        <button className="mt-6 rounded-full bg-[#7b50c0] px-8 py-3 text-white font-medium hover:bg-[#7b50c0e5] transition cursor-pointer">
+                        <button className="mt-6 rounded-full bg-[#7b50c0] px-8 py-3 text-white font-medium hover:bg-[#7b50c0e5] transition cursor-pointer w-full md:w-auto">
                             View Treatments
                         </button>
                     </div>
@@ -29,7 +29,7 @@ const Hero = () => {
             </section>
 
 
-            <div className="bg-[#e9f6ff]">
+            <div className="hidden md:block bg-[#e9f6ff]">
                 <Container>
                     <div className="py-5 flex flex-row justify-between">
 

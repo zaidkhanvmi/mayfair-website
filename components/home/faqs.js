@@ -56,7 +56,7 @@ const Faqs = () => {
     return (
         <section className='my-[100px]'>
             <Container>
-                <h3 className='text-[40px] text-black font-bold text-center'>
+                <h3 className='text-2xl md:text-[40px] text-black font-bold text-center'>
                     Frequently asked questions
                 </h3>
                 <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-5 mt-8'>
@@ -75,7 +75,7 @@ const Faqs = () => {
                                         {item?.que}
                                     </h3>
                                     <span className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-                                        <ChevronUp size={20} color='#17a2b8'/>
+                                        <ChevronUp size={20} color='#17a2b8' />
                                     </span>
                                 </div>
                                 {isOpen && (

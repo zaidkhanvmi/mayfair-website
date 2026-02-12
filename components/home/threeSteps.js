@@ -39,7 +39,7 @@ const ThreeSteps = () => {
                         </div>
 
                         {/* Image 1 */}
-                        <div className="absolute top-2 right-45 w-[27%] h-1/5">
+                        <div className="hidden md:block absolute top-2 right-45 w-[27%] h-1/5">
                             <Image
                                 src="/threeStepsbg.png"
                                 fill
@@ -49,7 +49,7 @@ const ThreeSteps = () => {
                         </div>
 
                         {/* Image 2 (flipped vertically) */}
-                        <div className="absolute top-20 left-45 w-[27%] h-1/5">
+                        <div className="hidden md:block absolute top-20 left-45 w-[27%] h-1/5">
                             <Image
                                 src="/threeStepsbg.png"
                                 fill

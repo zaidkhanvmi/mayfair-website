@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div className="col-span-2 grid grid-cols-2 gap-x-5">
+          <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-5">
 
             <div>
 
@@ -53,10 +53,11 @@ const Footer = () => {
                 <Mail size={16} color="#5b45a7" />
                 <span>contact@mayfairweightlossclinic.co.uk</span>
               </div>
+
             </div>
 
             {/* Newsletter */}
-            <div>
+            <div className="mt-5 border-t-[1px] border-[#d6d6d6] py-5">
               <h3 className="font-bold text-lg mb-4 text-[#160647]">
                 Subscribe to our newsletter
               </h3>
@@ -75,9 +76,9 @@ const Footer = () => {
             </div>
 
             {/* Social */}
-            <div className="col-span-2 mt-7">
-              <div className="p-6 flex flex-col md:flex-row items-center justify-start border-t-[1px] border-b-[1px] border-black">
-                <p className="font-bold text-lg text-[#160647] mr-5">
+            <div className="md:col-span-2 mt-7">
+              <div className="p-6 flex flex-row items-center justify-start border-t-[1px] border-b-[1px] border-black">
+                <p className="font-bold text-lg text-[#160647] mr-2 md:mr-5">
                   Find us on
                 </p>
 
@@ -99,7 +100,7 @@ const Footer = () => {
               </div>
 
               {/* Payment & Certifications */}
-              <div className="flex flex-wrap items-center justify-start gap-6 my-6">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 my-6">
 
                 <Image src="/footer1.svg" alt="amex" width={50} height={50} />
                 <Image src="/footer2.svg" alt="mastercard" width={50} height={50} />

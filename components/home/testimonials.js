@@ -21,16 +21,16 @@ const Testimonials = () => {
     return (
         <section className='bg-[#e9f6ff] py-[100px]'>
             <Container>
-                <h3 className='text-black font-bold text-[40px] text-center'>
+                <h3 className='text-black font-bold text-2xl md:text-[40px] text-center'>
                     What our customers say
                 </h3>
                 <p className='text-base text-[#8d97ad] py-8 text-center'>
                     We pride ourselves on great customer service. Here are some comments left by our customers.
                 </p>
                 {/* Testimonials */}
-                <div className='grid grid-cols-3 items-center gap-5'>
+                <div className='flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible'>
                     {testimonials_data.map((item, index) => (
-                        <div className='bg-white rounded py-7.5 px-15'>
+                        <div className='bg-white rounded p-5 w-[200px] md:w-auto md:py-7.5 md:px-15 '>
                             <p className='text-base text-[#3e4555] leading-5 font-normal'>
                                 {item.para}
                             </p>

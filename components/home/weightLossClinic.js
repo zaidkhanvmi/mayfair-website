@@ -10,8 +10,8 @@ const WeightLossClinic = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* Left content */}
-                    <div className="flex flex-col gap-6">
-                        <h2 className="text-4xl font-extrabold text-black leading-tight">
+                    <div className="flex flex-col gap-6 order-2 md:order-1">
+                        <h2 className="text-2xl md:text-4xl text-center md:text-left font-extrabold text-black leading-tight">
                             Why Mayfair Weight Loss <br /> Clinic?
                         </h2>
 
@@ -48,7 +48,7 @@ const WeightLossClinic = () => {
                         src="/weightLossClinic.png"
                         width={500}
                         height={500}
-                        className="object-cover"
+                        className="object-cover order-1 md:order-2"
                         alt="Weight loss"
                     />
 

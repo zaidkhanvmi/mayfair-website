@@ -5,13 +5,13 @@ import Image from 'next/image'
 const Accreditations = () => {
     return (
         <>
-            <div className='bg-[#213570] min-h-[412px] flex items-center'>
-                <div className='max-w-[1140px] w-full mx-auto'>
+            <div className='bg-[#8763c3] custom:bg-[#213570] min-h-[412px] flex items-center'>
+                <div className='max-w-[1140px] w-full mx-auto px-5 custom:mx-auto'>
 
                     <div className="flex flex-col gap-5">
-                        <h3 className='text-5xl text-white'>Accreditations</h3>
-                        <p className='text-base text-white font-medium leading-8'>
-                            A passion for putting patients first. That’s always <br />
+                        <h3 className='text-3xl font-bold text-center custom:text-start custom:text-5xl text-white'>Accreditations</h3>
+                        <p className='text-base text-white font-normal custom:font-medium text-center custom:text-start leading-5 custom:leading-8'>
+                            A passion for putting patients first. That’s always <br className='hidden custom:block' />
                             something you look for in a healthcare center.
                         </p>
                     </div>
@@ -20,8 +20,9 @@ const Accreditations = () => {
             </div>
 
             <Container>
-                <div className='max-w-[1140px] w-full mx-0 -mt-18'>
-                    <div className="grid grid-cols-[repeat(3,270px)] gap-5">
+                <div className='max-w-[1140px] w-full mx-0 -mt-24 custom:-mt-18'>
+                    <div className="grid grid-cols-[repeat(1,250px)] custom:grid-cols-[repeat(3,270px)] gap-8 justify-center custom:justify-start">
+
                         <div className='bg-white shadow rounded flex flex-col gap-3 py-5 px-7.5'>
                             <Image src="/accred-img1.webp" width={50} height={50} alt='image' />
                             <h3 className='text-black text-base font-bold'>ICO registered website</h3>
@@ -43,6 +44,7 @@ const Accreditations = () => {
                                 The MHRA regulates medicines and medical devices in the UK.
                             </p>
                         </div>
+
                     </div>
                 </div>
             </Container>

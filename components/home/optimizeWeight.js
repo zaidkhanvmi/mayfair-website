@@ -32,26 +32,26 @@ const OptimizeWeight = () => {
     return (
         <div className='my-10'>
             <Container>
-                <div className='flex flex-col gap-5'>
-                    <h3 className='text-[40px] font-bold text-black text-center'>
+                <div className='flex flex-col gap-5 shadow-lg md:shadow-none rounded-2xl p-5'>
+                    <h3 className='text-2xl md:text-[40px] font-bold text-[#7b50c0] md:text-black text-center'>
                         Optimising Weight Loss
                     </h3>
-                    <p className='text-base font-normal leading-8'>
+                    <p className='text-center md:text-left text-base font-normal leading-8 text-[#595959] '>
                         The Mayfair weight loss clinic team has spent years studying and treating obesity, so we understand how to provide effective and practical weight loss solutions to our patients to help them succeed on their weight loss journey. We have combined the latest clinical evidence and years of knowledge in weight management to design a bespoke online consultation process. The online consultation along with the expertise of our clinical team enables us to recommend and support you with appropriate and effective management treatments.
                     </p>
-                    <p className='text-base text-left font-normal'>
+                    <p className='text-base text-center md:text-left font-normal text-[#595959] '>
                         Below are 3 essential aspects in what brings effective weight loss.
                     </p>
                 </div>
 
-                <div className='mt-12 bg-white shadow-md'>
+                <div className='mt-12 bg-none md:bg-white shadow-md'>
 
-                    <div className='grid grid-cols-3'>
+                    <div className='grid grid-cols-1 gap-3 md:grid-cols-3'>
                         {optimize_content.map((item, index) => (
                             <div
                                 key={index}
                                 onClick={() => setSelectedIndex(index)}
-                                className={`border-[1px] border-[#b9b9b9] px-7.5 py-5 flex items-center justify-center gap-2 cursor-pointer hover:bg-[#160647] transition-all delay-75 ${selectedIndex === index ? 'bg-[#160647] text-white' : 'hover:bg-[#160647] hover:text-white'}`}
+                                className={`md:border-[1px] border-[#b9b9b9] px-7.5 py-5 flex items-center justify-start md:justify-center gap-2 cursor-pointer hover:bg-[#160647] transition-all delay-75 ${selectedIndex === index ? 'bg-[#8d69c9] md:bg-[#160647] text-white' : 'bg-[#f5f4f4] md:hover:bg-[#160647] hover:text-white'} rounded-full md:rounded-none`}
                             >
                                 <div
                                     className={`p-0.5 rounded font-bold ${selectedIndex === index ? 'text-[#160647] bg-white' : 'bg-[#a3a3a3] text-white'}`}>
@@ -65,9 +65,9 @@ const OptimizeWeight = () => {
                         ))}
                     </div>
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 items-start mt-5 p-12'>
-                        <div className='flex flex-col gap-7'>
-                            <h3 className='text-3xl text-[#14ac7b] font-bold'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 items-start mt-5 gap-y-5 md:gap-y-0 p-5 md:p-12'>
+                        <div className='flex flex-col gap-7 order-2 md:order-1'>
+                            <h3 className='text-2xl md:text-3xl text-[#14ac7b] font-bold text-center md:text-start'>
                                 {optimize_content[selectedIndex].title}
                             </h3>
                             <p className='text-base font-normal leading-8 text-left'>
@@ -77,7 +77,7 @@ const OptimizeWeight = () => {
                                 {optimize_content[selectedIndex].para2}
                             </p>
                         </div>
-                        <div className='justify-self-end'>
+                        <div className='justify-self-end order-1 md:order-2'>
                             <Image
                                 src={`${optimize_content[selectedIndex].image}`}
                                 width={500}

@@ -7,7 +7,7 @@ const WeightLoss = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
           <div className="flex flex-col gap-2 justify-center text-center md:text-left">
-            <h2 className="text-[40px] text-black font-extrabold">
+            <h2 className="text-2xl md:text-[40px] text-black font-extrabold">
               Weight Loss Treatments
             </h2>
             <p className="text-sm leading-6">
