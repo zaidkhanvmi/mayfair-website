@@ -230,6 +230,41 @@ const WegovyInjection = () => {
                     </div>
                 </Container>
             </section>
+
+            <section className='mt-5 py-5 px-12.5 bg-white rounded '>
+                <Container>
+                    <div className='flex flex-row items-center gap-6'>
+                        <div className='flex items-center text-center flex-col gap-5'>
+                            <Image src="/weg-icon1.svg" width={100} height={100} alt='wegvay-icon' />
+                            <h3 className='text-[#8D69C9] text-lg font-semibold'>
+                                Fill out the Online Form
+                            </h3>
+                            <p className='text-[#212529] text-base'>
+                                Fill out our online consultation form with valid and accurate patient information and medical conditions.
+                            </p>
+                        </div>
+                        <div className='flex items-center text-center flex-col gap-5'>
+                            <Image src="/weg-icon2.svg" width={100} height={100} alt='wegvay-icon' />
+                            <h3 className='text-[#8D69C9] text-lg font-semibold'>
+                                Fill out the Online Form
+                            </h3>
+                            <p className='text-[#212529] text-base'>
+                                Select the weight loss treatment you are prescribed. We will suggest the options based on your eligibility.
+                            </p>
+                        </div>
+                        <div className='flex items-center text-center flex-col gap-5'>
+                            <Image src="/weg-icon3.svg" width={100} height={100} alt='wegvay-icon' />
+                            <h3 className='text-[#8D69C9] text-lg font-semibold'>
+                                Fill out the Online Form
+                            </h3>
+                            <p className='text-[#212529] text-base'>
+                                Your treatment will be dispensed and delivered to your doorstep by a tracked courier service.
+                            </p>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
         </>
     )
 }

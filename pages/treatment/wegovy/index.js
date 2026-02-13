@@ -1,4 +1,5 @@
 import Container from '@/components/layout/Container'
+import WegovyBmi from '@/components/treatment-wegovy/wegovy-bmi'
 import WegovyInjection from '@/components/treatment-wegovy/wegovyInjection'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
@@ -23,6 +24,7 @@ const Wegovy = () => {
           </Link>
         </div>
         <WegovyInjection />
+        <WegovyBmi />
       </Container>
     </section>
   )
