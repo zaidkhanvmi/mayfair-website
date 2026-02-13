@@ -25,7 +25,7 @@ const Wegovy = () => {
         </div>
         <WegovyInjection />
         <WegovyBmi />
-      </Container>
+      </Container> 
     </section>
   )
 }

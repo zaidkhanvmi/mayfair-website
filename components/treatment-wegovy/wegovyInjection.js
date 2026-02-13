@@ -77,7 +77,7 @@ const WegovyInjection = () => {
                                 />
                             </div>
                             {/* Doctor Profile */}
-                            <div className='bg-[#f4f7fc] px-7.5 py-5 rounded mt-5'>
+                            <div className='bg-[#f4f7fc] px-7.5 py-5 rounded mt-10 h-full'>
                                 <div className='bg-[#7356a4] rounded-2xl flex flex-row items-center justify-between'>
                                     <Image src="/doctor-profile1.jpg" width={150} height={150} alt='doctor-profile'
                                         className='rounded-tl-2xl rounded-bl-2xl' />
@@ -87,7 +87,7 @@ const WegovyInjection = () => {
                                         <p className='text-sm text-white'>Last reviewed on: 10/02/2026</p>
                                     </div>
                                 </div>
-                                <div className='flex flex-col gap-4 mt-5'>
+                                <div className='flex flex-col gap-5 mt-5'>
                                     <h3 className='text-2xl md:text-3xl font-bold text-black'>
                                         Shipping Across the UK
                                     </h3>

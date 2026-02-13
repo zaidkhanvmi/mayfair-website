@@ -24,22 +24,45 @@ const WegovyBmi = () => {
 
     const handleHeightCmBlur = () => {
         if (!values.heightCm) return;
-        const totlaInches = Number(values.heightCm) / 2.5;
-        setValue("heightFeet", String(Math.floor(totlaInches) / 12), {
+        const totlaInches = Number(values.heightCm) / 2.54;
+        const feet = Math.floor(totlaInches / 12);
+        const inches = Math.floor(totlaInches % 12);
+        setValue("heightFeet", Number(feet), {
             shouldValidate: true
         });
-        setValue("heightInches", String(Math.round(totlaInches) % 12), {
+        setValue("heightInches", Number(inches), {
             shouldValidate: true
         });
     }
-    console.log(values);
+
+    const handleHeightFtBlur = () => {
+        if (!values.heightFeet) return;
+        const totalInches = Number(values.heightFeet) * 12 + Number(values.heightInches || 0);
+        const cm = totalInches * 2.54;
+        setValue("heightCm", Math.round(cm), {
+            shouldValidate: true
+        });
+    }
+
+    const handleWeightKgBlur = () => {
+        if (!values.weightKg) return;
+        const totalLb = Number(values.weightKg) * 2.20462;
+        setValue("weightStone", String(Math.round(totalLb / 14)), { shouldValidate: true });
+        setValue("weightPounds", String(Math.round(totalLb % 14)), { shouldValidate: true });
+    }
+
+    const onSubmit = (data) => {
+        if (!data) return;
+        console.log(data);
+    }
+
 
     return (
         <section className='mt-5 py-5 px-12.5 bg-white rounded '>
             <Container>
                 <div className='flex flex-row items-center gap-6'>
 
-                    <div className="bg-[#ecdfff] p-10 rounded-[20px] flex flex-col gap-5 flex-1">
+                    <div className="bg-[#ecdfff] p-10 rounded-[20px] flex flex-col gap-5 flex-[1.2]">
                         <h2 className="text-2xl text-[#160647] font-bold">
                             How much weight could you lose with Wegovy in one year?
                         </h2>
@@ -48,156 +71,204 @@ const WegovyBmi = () => {
                         </p>
                         {/* Form */}
                         {/* height */}
-                        <div>
-                            <div className="flex flex-col items-start gap-3">
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div>
+                                <div className="flex flex-col items-start gap-3">
 
-                                <label className="text-base text-[#160647]">
-                                    What is your height?
-                                </label>
+                                    <label className="text-base text-[#160647]">
+                                        What is your height?
+                                    </label>
 
-                                {
-                                    heightUnit === "heightInImperial" ? (
-                                        <>
+                                    {
+                                        heightUnit === "heightInImperial" ? (
+                                            <>
+                                                <div className="flex items-center input-wrapper">
+                                                    <input
+                                                        onBlur={handleHeightCmBlur}
+                                                        type="number"
+                                                        placeholder="180"
+                                                        {...register("heightCm", { required: "Required", min: 122, max: 300 })}
+                                                        className="form-input"
+                                                    />
+                                                    <span className="text-sm text-[#666] mr-4">
+                                                        cm
+                                                    </span>
+
+                                                </div>
+                                                {errors.heightCm && (
+                                                    <p className="text-red-500 text-xs">
+                                                        Range: 122-300cm
+                                                    </p>
+                                                )}
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="flex flex-row justify-between gap-5">
+                                                    <div className="flex items-center input-wrapper">
+                                                        <input
+                                                            onBlur={handleHeightFtBlur}
+                                                            type="number"
+                                                            placeholder="5"
+                                                            {...register("heightFeet", { required: "Required" })}
+                                                            className="form-input"
+                                                        />
+                                                        <span className="text-sm text-[#666] mr-4">
+                                                            feet
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex items-center input-wrapper">
+                                                        <input
+                                                            onBlur={handleHeightFtBlur}
+                                                            type="number"
+                                                            placeholder="11"
+                                                            {...register("heightInches", { required: "Required" })}
+                                                            className="form-input"
+                                                        />
+                                                        <span className="text-sm text-[#666] mr-4">
+                                                            inches
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                {errors.heightFeet || errors.heightInches && (
+                                                    <p className="text-red-500 text-xs">
+                                                        These fields are required
+                                                    </p>
+                                                )}
+                                            </>
+                                        )
+                                    }
+
+                                    <button
+                                        onClick={() => {
+                                            setHeightUnit(prev =>
+                                                prev === "heightInImperial" ?
+                                                    "heightInMetric" :
+                                                    "heightInImperial"
+                                            )
+                                            handleHeightCmBlur();
+                                            handleHeightFtBlur();
+                                        }}
+                                        className="text-[#6b5b95] border-none cursor-pointer text-sm underline hover:text-[#160647]">
+                                        Switch to {heightUnit === "heightInImperial" ? "Imperial" : "Metric"}
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* weight */}
+                            <div>
+                                <div className="flex flex-col items-start gap-3">
+
+                                    <label className="text-base text-[#160647]">
+                                        What is your weight?
+                                    </label>
+
+                                    {
+                                        weightUnit === "weightInImperial" ? (
                                             <div className="flex items-center input-wrapper">
                                                 <input
-                                                    onBlur={handleHeightCmBlur}
                                                     type="number"
-                                                    placeholder="180"
-                                                    {...register("heightCm", { required: "Required", min: 122, max: 300 })}
+                                                    placeholder="99"
+                                                    {...register("weightKg", { required: "Required", })}
                                                     className="form-input"
                                                 />
                                                 <span className="text-sm text-[#666] mr-4">
-                                                    cm
+                                                    kg
                                                 </span>
-
                                             </div>
-                                            {errors.heightCm && (
-                                                <p className="text-red-500 text-xs">
-                                                    Range: 122-300cm
-                                                </p>
-                                            )}
-                                        </>
-                                    ) : (
-                                        <>
-                                            <div className="flex flex-row justify-between gap-5">
-                                                <div className="flex items-center input-wrapper">
-                                                    <input
-                                                        type="number"
-                                                        placeholder="5"
-                                                        {...register("heightFeet", { required: "Required" })}
-                                                        className="form-input"
-                                                    />
-                                                    <span className="text-sm text-[#666] mr-4">
-                                                        feet
-                                                    </span>
+                                        ) : (
+                                            <>
+                                                <div className="flex flex-row justify-between gap-5">
+                                                    <div className="flex items-center input-wrapper">
+                                                        <input
+                                                            type="number"
+                                                            placeholder="15"
+                                                            {...register("weightStone", { required: true })}
+                                                            className="form-input"
+                                                        />
+                                                        <span className="text-sm text-[#666] mr-4">
+                                                            stone
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex items-center input-wrapper">
+                                                        <input
+                                                            type="number"
+                                                            placeholder="9"
+                                                            {...register("weightPounds", { required: true })}
+                                                            className="form-input"
+                                                        />
+                                                        <span className="text-sm text-[#666] mr-4">
+                                                            pounds
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                                <div className="flex items-center input-wrapper">
-                                                    <input
-                                                        type="number"
-                                                        placeholder="11"
-                                                        {...register("heightInches", { required: "Required" })}
-                                                        className="form-input"
-                                                    />
-                                                    <span className="text-sm text-[#666] mr-4">
-                                                        inches
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            {errors.heightFeet || errors.heightInches && (
-                                                <p className="text-red-500 text-xs">
-                                                    These fields are required
-                                                </p>
-                                            )}
-                                        </>
-                                    )
-                                }
-
-                                <button
-                                    onClick={() => {
-                                        setHeightUnit(prev =>
-                                            prev === "heightInImperial" ?
-                                                "heightInMetric" :
-                                                "heightInImperial"
+                                                {errors.weightPounds || errors.weightPounds && (
+                                                    <p className="text-red-500 text-xs">
+                                                        These fields are required
+                                                    </p>
+                                                )}
+                                            </>
                                         )
-                                        handleHeightCmBlur();
-                                    }}
-                                    className="text-[#6b5b95] border-none cursor-pointer text-sm underline hover:text-[#160647]">
-                                    Switch to {heightUnit === "heightInImperial" ? "Imperial" : "Metric"}
-                                </button>
+                                    }
+
+                                    <button
+                                        onClick={() => {
+                                            setWeightUnit(prev =>
+                                                prev === "weightInImperial" ?
+                                                    "weightInMetric" :
+                                                    "weightInImperial"
+                                            )
+                                            handleWeightKgBlur();
+                                        }}
+                                        className="text-[#6b5b95] border-none cursor-pointer text-sm underline hover:text-[#160647]">
+                                        Switch to {weightUnit === "weightInImperial" ? "Imperial" : "Metric"}
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                            <button
+                                className="bg-[#624894] py-3 rounded-full w-full cursor-pointer text-white mt-7">
+                                Calculate my weight loss
+                            </button>
+                        </form>
 
-                        {/* weight */}
-                        <div>
-                            <div className="flex flex-col items-start gap-3">
-
-                                <label className="text-base text-[#160647]">
-                                    What is your weight?
-                                </label>
-
-                                {
-                                    weightUnit === "weightInImperial" ? (
-                                        <div className="flex items-center input-wrapper">
-                                            <input
-                                                type="number"
-                                                placeholder="99"
-                                                {...register("weightKg", { required: "Required", })}
-                                                className="form-input"
-                                            />
-                                            <span className="text-sm text-[#666] mr-4">
-                                                kg
-                                            </span>
-                                        </div>
-                                    ) : (
-                                        <>
-                                            <div className="flex flex-row justify-between gap-5">
-                                                <div className="flex items-center input-wrapper">
-                                                    <input
-                                                        type="number"
-                                                        placeholder="15"
-                                                        {...register("weightStone", { required: true })}
-                                                        className="form-input"
-                                                    />
-                                                    <span className="text-sm text-[#666] mr-4">
-                                                        stone
-                                                    </span>
-                                                </div>
-                                                <div className="flex items-center input-wrapper">
-                                                    <input
-                                                        type="number"
-                                                        placeholder="9"
-                                                        {...register("weightPounds", { required: true })}
-                                                        className="form-input"
-                                                    />
-                                                    <span className="text-sm text-[#666] mr-4">
-                                                        pounds
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            {errors.weightPounds || errors.weightPounds && (
-                                                <p className="text-red-500 text-xs">
-                                                    These fields are required
-                                                </p>
-                                            )}
-                                        </>
-                                    )
-                                }
-
-                                <button
-                                    onClick={() =>
-                                        setWeightUnit(prev =>
-                                            prev === "weightInImperial" ?
-                                                "weightInMetric" :
-                                                "weightInImperial"
-                                        )}
-                                    className="text-[#6b5b95] border-none cursor-pointer text-sm underline hover:text-[#160647]">
-                                    Switch to {weightUnit === "weightInImperial" ? "Imperial" : "Metric"}
-                                </button>
+                        <div className="bg-white rounded-2xl p-8 flex flex-col gap-5">
+                            <p className="text-sm text-[#666] font-normal">
+                                Your BMI indicates that you currently are:
+                            </p>
+                            <h2 className="text-3xl font-semibold">
+                                Overweight 27.7
+                            </h2>
+                            <p className="text-sm text-[#160647]">
+                                The risk of weight-related health conditions increases for individuals with obesity. For a more in-depth analysis of your weight and pathways to better health, speak to one of our specialists today.
+                            </p>
+                            <div className=" w-full relative grid grid-cols-[repeat(5,1fr)]">
+                                <div className="bg-[#7ec8e3] py-2 h-full w-full rounded-tl-3xl rounded-bl-3xl"></div>
+                                <div className="bg-[#a8d5a5] h-full w-full"></div>
+                                <div className="bg-[#f4c47c] h-full w-full"></div>
+                                <div className="bg-[#f19e8e] h-full w-full"></div>
+                                <div className="bg-[#ea6b6b] h-full w-full rounded-tr-3xl rounded-br-3xl"></div>
+                                <div className="absolute h-7 w-7 -top-1.5 left-[92%] bg-white rounded-full border-3 border-[#8d69c9]">
+                                </div>
                             </div>
+                            <p className="italic text-[#666] text-sm">
+                                BMI is a predictive indicator of weight range. For a more in-depth understanding of your weight and available medical solutions, start an online consultation with a Mayfair Weightloss Clinic today.
+                            </p>
+                            <div className="py-5 rounded-2xl bg-[#CCB8EB] flex flex-col items-center justify-center gap-5">
+                                <p className="text-[#160647] text-lg">
+                                    Your estimated weight loss in 1 year
+                                </p>
+                                <div className="flex flex-row gap-5">
+                                    <p className="text-4xl font-semibold">
+                                        <span className="text-lg text-[#6b5b95]">▼</span> 15<sup className="text-lg">kg</sup>
+                                    </p>
+                                    <p className="py-2 px-3 rounded-full ml-2 bg-[#d7c9eb]">
+                                        ▼ 20 %
+                                    </p>
+                                </div>
+                            </div>
+                            <button className="py-3 w-full rounded-full bg-[#2d2d2d] text-white cursor-pointer">
+                                Check your eligibility
+                            </button>
                         </div>
-                        <button className="bg-[#624894] py-3 rounded-full w-full cursor-pointer text-white">
-                            Calculate my weight loss
-                        </button>
                     </div>
 
                     <div className="flex flex-col items-start gap-3 flex-1">
