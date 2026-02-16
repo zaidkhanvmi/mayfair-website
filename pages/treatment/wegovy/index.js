@@ -6,6 +6,7 @@ import WegovyTableContent from '@/components/treatment-wegovy/weggovy-table-cont
 import WegovyBmi from '@/components/treatment-wegovy/wegovy-bmi'
 import WegovySection from '@/components/treatment-wegovy/wegovy-sections'
 import WegovyInjection from '@/components/treatment-wegovy/wegovyInjection'
+import Faqs from '@/components/treatment-wegovy/faqs'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -33,6 +34,7 @@ const Wegovy = () => {
         <WegovySection />
         <WegovyTableContent />
         <Testimonials />
+        <Faqs />
         <DocterProfile />
       </Container>
       <FreeConsultation />
