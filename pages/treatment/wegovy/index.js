@@ -1,4 +1,7 @@
 import Container from '@/components/layout/Container'
+import FreeConsultation from '@/components/shared/freeConsultation'
+import DocterProfile from '@/components/treatment-wegovy/docterProfile'
+import Testimonials from '@/components/treatment-wegovy/testimonials'
 import WegovyTableContent from '@/components/treatment-wegovy/weggovy-table-content'
 import WegovyBmi from '@/components/treatment-wegovy/wegovy-bmi'
 import WegovySection from '@/components/treatment-wegovy/wegovy-sections'
@@ -29,7 +32,10 @@ const Wegovy = () => {
         <WegovyBmi />
         <WegovySection />
         <WegovyTableContent />
+        <Testimonials />
+        <DocterProfile />
       </Container>
+      <FreeConsultation />
     </section>
   )
 }

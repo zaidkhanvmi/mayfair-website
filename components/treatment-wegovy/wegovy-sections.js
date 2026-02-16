@@ -59,7 +59,7 @@ const WegovySection = () => {
 
     return (
         <>
-            <section className='mt-5 py-8 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
                     <div className='flex flex-row items-center gap-5'>
                         <div className='flex flex-col gap-3 flex-1'>
@@ -95,7 +95,7 @@ const WegovySection = () => {
                 </Container>
             </section>
 
-            <section className='mt-5 py-8 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
                     <div className='flex flex-row items-center gap-5'>
                         <div className='flex-1'>
@@ -134,7 +134,7 @@ const WegovySection = () => {
                 </Container>
             </section>
 
-            <section className='mt-5 py-8 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
                     <div className='flex flex-col items-center gap-5'>
 
@@ -158,7 +158,7 @@ const WegovySection = () => {
                 </Container>
             </section>
 
-            <section className='mt-5 py-8 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
                     <div className='flex flex-col items-center gap-5'>
                         <div className='flex flex-col items-center text-center gap-5 flex-1'>
@@ -174,12 +174,12 @@ const WegovySection = () => {
                             {weekly_doses.map((item, index) => (
                                 <div key={index} className='flex flex-col gap-1'>
                                     <div className='flex flex-row gap-5 justify-between items-center'>
-                                        <div className='rounded-2xl bg-[#8d69c9] py-5 px-5 flex-1'>
+                                        <div className='rounded-2xl bg-[#8d69c9] py-4 px-5 flex-[0.9]'>
                                             <p className='text-white text-lg font-semibold'>
                                                 {item.mg} mg Cost:£{Number(item.cost).toFixed(2)}
                                             </p>
                                         </div>
-                                        <Image src={item.image} width={500} height={70} alt='image' />
+                                        <Image src={item.image} width={400} height={70} alt='image' />
                                     </div>
                                     <p className='bg-[#ecdfff] px-2 py-1'>
                                         {item.desc}
@@ -191,7 +191,7 @@ const WegovySection = () => {
                 </Container>
             </section>
 
-            <section className='mt-5 py-8 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
                     <div className='flex flex-row items-center justify-between gap-5'>
                         <div className='flex flex-col gap-4 flex-[1.2]'>
@@ -243,7 +243,7 @@ const WegovySection = () => {
             </section>
 
             {/* Video Section */}
-            <section className='mt-5 py-8 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
                     <div className='flex flex-col items-center gap-5'>
 
@@ -271,7 +271,7 @@ const WegovySection = () => {
 
             {/* Injection_Image_Section */}
 
-            <section className='mt-5 py-8 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
                     <div className='flex flex-col items-center justify-between gap-7'>
                         <div className='flex flex-col items-center text-center gap-4 flex-[1.2]'>
