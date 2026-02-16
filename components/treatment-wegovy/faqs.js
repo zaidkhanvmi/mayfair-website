@@ -45,6 +45,30 @@ const faqs = [
         answer:
             "Alternative treatments may include Mounjaro or Saxenda. Your clinician will advise based on your medical profile.",
     },
+    {
+        question: "Can I take Wegovy a day early?",
+        answer: "Yes, you may take your dose one day earlier if at least three days have passed since your last injection. Always confirm schedule changes with our prescriber to ensure ongoing safety and clinical benefit."
+    },
+    {
+        question: "Can I get Wegovy without a prescription?",
+        answer: "No. Wegovy is only available with a prescription in the UK following assessment by a licensed clinician."
+    },
+    {
+        question: "Is there a generic version of Wegovy?",
+        answer: "No generic version of Wegovy is currently available in the UK. Patent protection remains in place, with a potential generic expected after 2031. At present, Wegovy is prescribed only as a branded medication."
+    },
+    {
+        question: "Why am I still hungry on Wegovy?",
+        answer: "Hunger can occur if you are early in treatment, have not reached your maintenance dose, or are not meeting nutritional needs. Following a balanced eating plan is essential. If appetite remains high, our prescriber may review your dose or discuss alternative treatment options."
+    },
+    {
+        question: "Is Wegovy the same as Rybelsus?",
+        answer: "No. Both contain semaglutide, but Wegovy is licensed for weight loss, while Rybelsus is prescribed for type 2 diabetes. They differ in purpose, dosing, and formulation."
+    },
+    {
+        question: "Is Wegovy safe?",
+        answer: "When prescribed appropriately, Wegovy is considered safe for many people. However, it may not suit individuals with certain medical conditions. A full medical assessment ensures suitability of Wegovy in the UK, and any ongoing or new symptoms should be discussed with our prescriber."
+    }
 ];
 
 const Faqs = () => {

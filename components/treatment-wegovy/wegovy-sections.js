@@ -61,8 +61,8 @@ const WegovySection = () => {
         <>
             <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
-                    <div className='flex flex-row items-center gap-5'>
-                        <div className='flex flex-col gap-3 flex-1'>
+                    <div className='flex flex-col md:flex-row items-center gap-5 '>
+                        <div className='flex flex-col gap-3 flex-1 order-2 md:order-1'>
                             <h2 className='text-3xl font-bold'>
                                 How does Wegovy work for weight loss?
                             </h2>
@@ -88,7 +88,7 @@ const WegovySection = () => {
                                 For optimal results, clinical team recommend using Wegovy alongside a calorie-controlled diet and regular physical activity. Clinical evidence shows that many individuals achieved meaningful weight reduction of around 5% when following this combined approach.
                             </p>
                         </div>
-                        <div className='flex-1'>
+                        <div className='flex-1 order-1 md:order-2'>
                             <Image src="/weg-sec-img1.png" width={500} height={450} alt='products' />
                         </div>
                     </div>
@@ -97,7 +97,7 @@ const WegovySection = () => {
 
             <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
-                    <div className='flex flex-row items-center gap-5'>
+                    <div className='flex flex-col md:flex-row items-center gap-5'>
                         <div className='flex-1'>
                             <Image src="/weg-sec-img2.png" width={500} height={450} alt='products' />
                         </div>
@@ -173,13 +173,13 @@ const WegovySection = () => {
                         <div className='flex flex-col gap-5'>
                             {weekly_doses.map((item, index) => (
                                 <div key={index} className='flex flex-col gap-1'>
-                                    <div className='flex flex-row gap-5 justify-between items-center'>
-                                        <div className='rounded-2xl bg-[#8d69c9] py-4 px-5 flex-[0.9]'>
+                                    <div className='flex flex-col md:flex-row gap-5 justify-between items-center'>
+                                        <div className='rounded-2xl bg-[#8d69c9] py-4 px-5 flex-1 md:flex-[0.9] w-full md:w-auto order-2 md:order-1'>
                                             <p className='text-white text-lg font-semibold'>
                                                 {item.mg} mg Cost:£{Number(item.cost).toFixed(2)}
                                             </p>
                                         </div>
-                                        <Image src={item.image} width={400} height={70} alt='image' />
+                                        <Image src={item.image} width={400} height={70} alt='image' className='order-1 md:order-2' />
                                     </div>
                                     <p className='bg-[#ecdfff] px-2 py-1'>
                                         {item.desc}
@@ -193,8 +193,8 @@ const WegovySection = () => {
 
             <section className='mt-5 py-8 md:px-12.5 bg-white rounded '>
                 <Container>
-                    <div className='flex flex-row items-center justify-between gap-5'>
-                        <div className='flex flex-col gap-4 flex-[1.2]'>
+                    <div className='flex flex-col md:flex-row items-center justify-between gap-5'>
+                        <div className='flex flex-col gap-4 flex-[1.2] order-2 md:order-1'>
                             <h2 className='text-3xl font-bold'>
                                 How to use Wegovy pens?
                             </h2>
@@ -235,7 +235,7 @@ const WegovySection = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='flex-1'>
+                        <div className='flex-1 order-1 md:order-2'>
                             <Image src="/weg-sec-img4.png" width={300} height={350} alt='products' />
                         </div>
                     </div>

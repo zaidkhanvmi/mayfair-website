@@ -53,39 +53,56 @@ const Faqs = () => {
         }
     ]
 
+    const mid = Math.ceil(faqs.length / 2); // split point
+
     return (
         <section className='my-[100px]'>
             <Container>
                 <h3 className='text-2xl md:text-[40px] text-black font-bold text-center'>
                     Frequently asked questions
                 </h3>
-                <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-5 mt-8'>
-                    {faqs.map((item, index) => {
-                        const isOpen = openIndex === index;
-                        return (
-                            <div
-                                key={index}
-                                className='flex flex-col gap-4'
-                            >
-                                <div
-                                    onClick={() => toggleFaqs(index)}
-                                    className='bg-[#dfdede36] rounded py-5 px-7.5 flex items-center justify-between cursor-pointer gap-5'
-                                >
-                                    <h3 className='text-lg font-semibold'>
-                                        {item?.que}
-                                    </h3>
-                                    <span className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-                                        <ChevronUp size={20} color='#17a2b8' />
-                                    </span>
+                <div className='grid grid-cols-1 md:grid-cols-2 items-start gap-5 mt-8'>
+                    {/* Left Column */}
+                    <div className="space-y-6">
+                        {faqs.slice(0, mid).map((item, index) => {
+                            const isOpen = openIndex === index;
+                            return (
+                                <div key={index} className='flex flex-col gap-4'>
+                                    <div
+                                        onClick={() => toggleFaqs(index)}
+                                        className='bg-[#dfdede36] rounded py-5 px-7.5 flex items-center justify-between cursor-pointer gap-5'
+                                    >
+                                        <h3 className='text-base font-semibold'>{item.que}</h3>
+                                        <span className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
+                                            <ChevronUp size={20} color='#17a2b8' />
+                                        </span>
+                                    </div>
+                                    {isOpen && <p className='text-base p-3'>{item.ans}</p>}
                                 </div>
-                                {isOpen && (
-                                    <p className='text-base p-3'>
-                                        {item?.ans}
-                                    </p>
-                                )}
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="space-y-6">
+                        {faqs.slice(mid).map((item, index) => {
+                            const isOpen = openIndex === index + mid; // important: offset the index
+                            return (
+                                <div key={index + mid} className='flex flex-col gap-4'>
+                                    <div
+                                        onClick={() => toggleFaqs(index + mid)}
+                                        className='bg-[#dfdede36] rounded py-5 px-7.5 flex items-center justify-between cursor-pointer gap-5'
+                                    >
+                                        <h3 className='text-base font-semibold'>{item.que}</h3>
+                                        <span className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
+                                            <ChevronUp size={20} color='#17a2b8' />
+                                        </span>
+                                    </div>
+                                    {isOpen && <p className='text-base p-3'>{item.ans}</p>}
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </Container>
         </section>

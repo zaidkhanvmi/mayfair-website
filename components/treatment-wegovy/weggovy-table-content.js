@@ -36,27 +36,27 @@ const WegovyTableContent = () => {
                                         Side effects of Wegovy
                                     </li>
                                 </Link>
-                                <Link href={"reduceEffect"}>
+                                <Link href={"#reduceEffect"}>
                                     <li className='text-base hover:underline list-disc list-[#8d69c9] cursor-pointer pb-2'>
                                         How to reduce and manage Wegovy side effects?
                                     </li>
                                 </Link>
-                                <Link href={"wegovyWarnings"}>
+                                <Link href={"#wegovyWarnings"}>
                                     <li className='text-base hover:underline list-disc list-[#8d69c9] cursor-pointer pb-2'>
                                         Wegovy warnings
                                     </li>
                                 </Link>
-                                <Link href={"hearHealth"}>
+                                <Link href={"#hearHealth"}>
                                     <li className='text-base hover:underline list-disc list-[#8d69c9] cursor-pointer pb-2'>
                                         Does Wegovy have heart health benefits?
                                     </li>
                                 </Link>
-                                <Link href={"comparing"}>
+                                <Link href={"#comparing"}>
                                     <li className='text-base hover:underline list-disc list-[#8d69c9] cursor-pointer pb-2'>
                                         Comparing wegovy with alternative weight loss treatments
                                     </li>
                                 </Link>
-                                <Link href={"stopping"}>
+                                <Link href={"#stopping"}>
                                     <li className='text-base hover:underline list-disc list-[#8d69c9] cursor-pointer pb-2'>
                                         What to expect after stopping Wegovy?
                                     </li>

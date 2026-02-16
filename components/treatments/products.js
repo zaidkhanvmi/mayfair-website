@@ -29,7 +29,7 @@ const Products = () => {
                 "Avg weight loss of ~20%"
             ],
             price: "189",
-            path: "/treatment/mounjaro"
+            path: "/treatment/wegovy"
         },
         {
             title: "Saxenda Injection",
@@ -40,7 +40,7 @@ const Products = () => {
                 "Prescription medication licensed to treat weight loss",
             ],
             price: "74.99",
-            path: "/treatment/sexanda"
+            path: "/treatment/wegovy"
         }
     ];
 

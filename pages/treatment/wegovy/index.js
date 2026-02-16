@@ -10,10 +10,12 @@ import Faqs from '@/components/treatment-wegovy/faqs'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import TakeMeToTop from '@/components/utils/TakeMeToTop'
 
 const Wegovy = () => {
   return (
     <section className='bg-[#f2f3f5] -mt-7'>
+      <TakeMeToTop />
       <Container>
         {/* breadcrumbs */}
         <div className='flex items-center justify-start gap-2 pt-16 pl-5'>

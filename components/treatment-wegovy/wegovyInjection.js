@@ -39,7 +39,7 @@ const WegovyInjection = () => {
 
     return (
         <>
-            <section className='mt-2 py-15 px-12.5 bg-white rounded '>
+            <section className='mt-2 py-15 md:px-12 bg-white rounded '>
                 <Container>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-x-5'>
 
@@ -50,7 +50,7 @@ const WegovyInjection = () => {
                                 height={302}
                                 alt='wegovy product'
                             />
-                            <div className='flex flex-row gap-3 items-center'>
+                            <div className='flex flex-wrap flex-row gap-3 items-center'>
                                 <Image
                                     src="/wegovy-prod2.png"
                                     width={150}
@@ -78,7 +78,7 @@ const WegovyInjection = () => {
                             </div>
                             {/* Doctor Profile */}
                             <div className='bg-[#f4f7fc] px-7.5 py-5 rounded mt-10 h-full'>
-                                <div className='bg-[#7356a4] rounded-2xl flex flex-row items-center justify-between'>
+                                <div className='bg-[#7356a4] rounded-2xl flex flex-col md:flex-row items-center justify-between'>
                                     <Image src="/doctor-profile1.jpg" width={150} height={150} alt='doctor-profile'
                                         className='rounded-tl-2xl rounded-bl-2xl' />
                                     <div className='px-5 text-center'>
@@ -174,7 +174,7 @@ const WegovyInjection = () => {
                                     New to Wegovy? You’ll start on 0.25mg
                                 </p>
                             </div>
-                            <div className='flex flex-row gap-2 items-center'>
+                            <div className='flex flex-row flex-wrap gap-2 items-center'>
                                 {dosage_data.map((item, index) => (
                                     <div
                                         onClick={() => setCurrentDosage(index)}
@@ -201,10 +201,10 @@ const WegovyInjection = () => {
                 </Container>
             </section>
 
-            <section className='mt-5 py-5 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-5 md:px-12 bg-white rounded '>
                 <Container>
-                    <div className='flex flex-row items-center gap-5'>
-                        <div className='flex flex-col gap-3 flex-1'>
+                    <div className='flex flex-col md:flex-row items-center gap-5'>
+                        <div className='flex flex-col gap-3 flex-1 order-2 md:order-1'>
                             <h2 className='text-3xl font-bold'>
                                 What is Wegovy weight loss pen?
                             </h2>
@@ -224,16 +224,16 @@ const WegovyInjection = () => {
                                 <li className='list-disc text-base text-[#212529]'>Encouraging more consistent eating patterns</li>
                             </ul>
                         </div>
-                        <div className='flex-1'>
+                        <div className='flex-1 order-1 md:order-2'>
                             <Image src="/wegvoy-prod2.png" width={500} height={450} alt='products' />
                         </div>
                     </div>
                 </Container>
             </section>
 
-            <section className='mt-5 py-5 px-12.5 bg-white rounded '>
+            <section className='mt-5 py-5 md:px-12 bg-white rounded '>
                 <Container>
-                    <div className='flex flex-row items-center gap-6'>
+                    <div className='flex flex-col md:flex-row items-center gap-6'>
                         <div className='flex items-center text-center flex-col gap-5'>
                             <Image src="/weg-icon1.svg" width={100} height={100} alt='wegvay-icon' />
                             <h3 className='text-[#8D69C9] text-lg font-semibold'>
