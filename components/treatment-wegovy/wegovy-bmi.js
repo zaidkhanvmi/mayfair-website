@@ -54,6 +54,25 @@ const WegovyBmi = () => {
         setValue("weightPounds", String(Math.round(totalLb % 14)), { shouldValidate: true });
     }
 
+    const handleHeightSwitch = () => {
+        setHeightUnit(prev =>
+            prev === "heightInImperial" ?
+                "heightInMetric" :
+                "heightInImperial"
+        )
+        handleHeightCmBlur();
+        handleHeightFtBlur();
+    }
+
+    const handleWeightSwitch = () => {
+        setWeightUnit(prev =>
+            prev === "weightInImperial" ?
+                "weightInMetric" :
+                "weightInImperial"
+        );
+        handleWeightKgBlur();
+    }
+
     const calculateBbmi = (data) => {
         const heightM = data.heightCm / 100;
         const weightkg = data.weightKg;
@@ -93,7 +112,7 @@ const WegovyBmi = () => {
                         {!showBmi && (
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div>
-                                    <div className="flex flex-col items-start gap-3">
+                                    <div className="flex flex-col items-start gap-3 pb-5">
 
                                         <label className="text-base text-[#160647]">
                                             What is your height?
@@ -159,15 +178,8 @@ const WegovyBmi = () => {
                                         }
 
                                         <button
-                                            onClick={() => {
-                                                setHeightUnit(prev =>
-                                                    prev === "heightInImperial" ?
-                                                        "heightInMetric" :
-                                                        "heightInImperial"
-                                                )
-                                                handleHeightCmBlur();
-                                                handleHeightFtBlur();
-                                            }}
+                                            type="button"
+                                            onClick={handleHeightSwitch}
                                             className="text-[#6b5b95] border-none cursor-pointer text-sm underline hover:text-[#160647]">
                                             Switch to {heightUnit === "heightInImperial" ? "Imperial" : "Metric"}
                                         </button>
@@ -231,14 +243,8 @@ const WegovyBmi = () => {
                                         }
 
                                         <button
-                                            onClick={() => {
-                                                setWeightUnit(prev =>
-                                                    prev === "weightInImperial" ?
-                                                        "weightInMetric" :
-                                                        "weightInImperial"
-                                                )
-                                                handleWeightKgBlur();
-                                            }}
+                                            type="button"
+                                            onClick={handleWeightSwitch}
                                             className="text-[#6b5b95] border-none cursor-pointer text-sm underline hover:text-[#160647]">
                                             Switch to {weightUnit === "weightInImperial" ? "Imperial" : "Metric"}
                                         </button>
