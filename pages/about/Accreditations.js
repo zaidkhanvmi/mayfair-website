@@ -24,7 +24,7 @@ const Accreditations = () => {
 
     return (
         <>
-            <div className='bg-[#8763c3] custom:bg-[#213570] min-h-[70vh] flex items-start pt-10'>
+            <div className='bg-[#8763c3] custom:bg-[#213570] min-h-[70vh] flex items-start py-10 md:py-0 md:pt-10'>
                 <div className='max-w-[1140px] w-full mx-auto px-5 custom:mx-auto'>
 
                     <div className="flex flex-col gap-3">
@@ -43,7 +43,7 @@ const Accreditations = () => {
             </div>
 
             <Container>
-                <div className='max-w-[1140px] w-full mx-0 -mt-24 custom:-mt-18'>
+                <div className='max-w-[1140px] w-full mx-0 mt-5 md:-mt-24 custom:-mt-18'>
                     <div className="grid grid-cols-[repeat(1,250px)] custom:grid-cols-[repeat(3,270px)] gap-8 justify-center custom:justify-start">
                         {accred_items.map((item, index) => (
                             <div key={index} className='cursor-pointer group bg-white shadow rounded flex flex-col gap-3 py-5 px-7.5 relative'>

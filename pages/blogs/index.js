@@ -2,12 +2,14 @@ import Container from '@/components/layout/Container'
 import { blogs, medication_blogs, weight_blogs } from '@/utils/blog'
 import { Clock, Search } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+import BlogsCarousal from './blogs-carousal'
 
 const Blogs = () => {
     return (
         <>
-            <section className='bg-[#dacfff] -mt-7 min-h-[370px]'>
+            <section className='bg-[#dacfff] md:-mt-7 min-h-[370px]'>
                 <Container>
                     <div className='w-full h-full pt-[100px] pb-10 border-b-[1px] border-[#343A404D]'>
                         <h1 className='text-3xl md:text-[40px] text-[#160647] font-bold'>
@@ -17,7 +19,7 @@ const Blogs = () => {
                             <h2>
                                 Browse by Category
                             </h2>
-                            <div className='flex flex-col md:flex-row items-center justify-between'>
+                            <div className='flex flex-col gap-5 md:flex-row items-center justify-between'>
                                 <div className='flex flex-row items-center gap-2'>
                                     <button className='bg-white rounded-full text-[#160647] text-base hover:text-blue-500 cursor-pointer hover:underline px-4 py-2 font-normal'>
                                         Featured
@@ -46,26 +48,26 @@ const Blogs = () => {
                 </Container>
             </section>
 
-            <section className='pb-14 bg-[#dacfff]'>
+            <section className='pb-14 pt-5 bg-[#dacfff] h-auto'>
                 <Container>
                     <div className='w-full h-full'>
                         <h1 className='text-xl md:text-[28px] text-[#160647] font-bold'>
                             Featured Articles
                         </h1>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 items-stretch'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 md:gap-y-0 mt-5 items-stretch'>
                             {blogs.map((item, index) => (
-                                <div className=''>
+                                <div key={index} className='w-full h-full'>
                                     <Image
                                         src={item.image}
                                         width={350}
                                         height={280}
                                         alt='blog-igm'
-                                        className='rounded-tl-2xl rounded-tr-2xl object-fit w-full'
+                                        className='rounded-tl-2xl rounded-tr-2xl object-cover w-full'
                                     />
                                     <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
-                                        <h2 className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                        <Link href={`/blogs/${item.slug}`} className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
                                             {item.title}
-                                        </h2>
+                                        </Link>
                                         <p className='para mt-6 flex flex-row items-center gap-2'>
                                             <span>
                                                 <Clock size={15} color='#8d69c9' />
@@ -94,9 +96,9 @@ const Blogs = () => {
                                 Explore Weight
                             </button>
                         </div>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 items-stretch'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 md:gap-y-0 mt-5 items-stretch'>
                             {weight_blogs.map((item, index) => (
-                                <div className=''>
+                                <div key={index} className=''>
                                     <Image
                                         src={item.image}
                                         width={350}
@@ -105,9 +107,9 @@ const Blogs = () => {
                                         className='rounded-tl-2xl rounded-tr-2xl object-fit w-full'
                                     />
                                     <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
-                                        <h2 className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                        <Link href={`/blogs/${item.slug}`} className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
                                             {item.title}
-                                        </h2>
+                                        </Link>
                                         <p className='para mt-6 flex flex-row items-center gap-2'>
                                             <span>
                                                 <Clock size={15} color='#8d69c9' />
@@ -136,9 +138,9 @@ const Blogs = () => {
                                 Explore Medication
                             </button>
                         </div>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 items-stretch'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 md:gap-y-0 mt-5 items-stretch'>
                             {medication_blogs.map((item, index) => (
-                                <div className=''>
+                                <div key={index} className=''>
                                     <Image
                                         src={item.image}
                                         width={350}
@@ -147,9 +149,9 @@ const Blogs = () => {
                                         className='rounded-tl-2xl rounded-tr-2xl object-fit w-full'
                                     />
                                     <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
-                                        <h2 className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                        <Link href={`/blogs/${item.slug}`} className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
                                             {item.title}
-                                        </h2>
+                                        </Link>
                                         <p className='para mt-6 flex flex-row items-center gap-2'>
                                             <span>
                                                 <Clock size={15} color='#8d69c9' />
@@ -163,6 +165,8 @@ const Blogs = () => {
                     </div>
                 </Container>
             </section>
+
+            <BlogsCarousal />
         </>
     )
 }

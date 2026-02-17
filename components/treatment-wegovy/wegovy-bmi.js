@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Container from "../layout/Container"
 import { useForm } from "react-hook-form";
+import { ChevronLeft } from "lucide-react";
 
 const WegovyBmi = () => {
     const [heightUnit, setHeightUnit] = useState("heightInImperial");
@@ -100,17 +101,27 @@ const WegovyBmi = () => {
             <Container>
                 <div className='flex flex-col md:flex-row items-center gap-6'>
 
-                    <div className="bg-[#ecdfff] p-10 rounded-[20px] flex flex-col gap-5 flex-[1.2] order-2 md:order-1">
+                    <div className="bg-[#ecdfff] p-10 rounded-[20px] flex flex-col gap-5 flex-[1.2] order-2 md:order-1 items-start">
                         <h2 className="text-2xl text-[#160647] font-bold">
                             How much weight could you lose with Wegovy in one year?
                         </h2>
                         <p className="text-[#160647] text-sm">
                             * Based on the results of a peer-reviewed clinical study of 2539 participants.
                         </p>
+                        {showBmi && (
+                            <button
+                                type="button"
+                                onClick={() => { setShowBmi(false) }}
+                                className="cursor-pointer bg-[#8d69c9] px-2 pr-4 py-2 rounded-full text-white text-center">
+                                <span>
+                                    <ChevronLeft size={20} color="white" className="inline-block" />
+                                </span> Back
+                            </button>
+                        )}
                         {/* Form */}
                         {/* height */}
                         {!showBmi && (
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                            <form onSubmit={handleSubmit(onSubmit)} className="w-full">
                                 <div>
                                     <div className="flex flex-col items-start gap-3 pb-5">
 

@@ -303,13 +303,13 @@ const WegovyTableContent = () => {
                             </p>
                         </div>
 
-                        <div id='comparing' className='flex flex-col gap-5 border-b-[1px] border-gray-300 pb-5 px-1'>
-                            <h3 className='text-2xl font-bold text-black'>
+                        <div id="comparing" className="hidden  md:flex flex-col gap-5 border-b-[1px] border-gray-300 pb-5 px-1">
+                            <h3 className="text-2xl font-bold text-black">
                                 Comparing Wegovy with alternative weight loss treatments
                             </h3>
-                            {/* Here is below the table */}
+                            {/* Table with horizontal scrolling */}
                             <div className="overflow-x-auto">
-                                <table className="w-full border border-gray-300 text-left text-sm">
+                                <table className="w-full table-auto border border-gray-300 text-left text-sm">
                                     <thead className="bg-gray-200">
                                         <tr>
                                             <th className="border border-gray-300 p-4 font-semibold">Feature</th>

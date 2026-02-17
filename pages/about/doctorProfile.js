@@ -152,7 +152,7 @@ const DoctorProfile = () => {
                 </Container>
             </section>
 
-            <section className="py-20">
+            <section className="pt-20">
                 <Container>
                     <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                         <Image
@@ -205,7 +205,7 @@ const DoctorProfile = () => {
                 </Container>
             </section>
 
-            <section className='py-20'>
+            <section className='pt-20'>
                 <Container>
                     <h2 className="text-[40px] font-bold text-center py-5">
                         What to Expect From Our Service

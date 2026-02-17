@@ -65,7 +65,7 @@ const TransparencySection = () => {
                                 <div
                                     key={index}
                                     onClick={() => setSelectedIndex(index)}
-                                    className={`group md:border-[1px] border-[#b9b9b9] px-2 py-5 flex items-center justify-start gap-2 cursor-pointer hover:bg-[#160647] transition-all delay-75 ${selectedIndex === index ? 'bg-[#8d69c9] md:bg-[#160647] text-white' : 'bg-[#f5f4f4] md:hover:bg-[#160647] hover:text-white'} rounded-full md:rounded-none`}
+                                    className={`group md:border-[1px] border-[#b9b9b9] px-2 py-5 flex items-center justify-center md:justify-self-auto gap-2 cursor-pointer hover:bg-[#160647] transition-all delay-75 ${selectedIndex === index ? 'bg-[#8d69c9] md:bg-[#160647] text-white' : 'bg-[#f5f4f4] md:hover:bg-[#160647] hover:text-white'} rounded-full md:rounded-none`}
                                 >
                                     <h3
                                         className={`text-lg font-bold transition delay-75 ${selectedIndex === index ? "text-white" : "text-black group-hover:text-white"}`}>
