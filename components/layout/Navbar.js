@@ -18,7 +18,7 @@ const Navbar = () => {
     { name: "About the Clinic", path: "/about" },
     { name: "FAQs", path: "/faqs" },
     { name: "Blog", path: "/blogs" },
-    { name: "Help & Support", path: "/help" },
+    { name: "Help & Support", path: "/contact" },
   ];
 
   return (

@@ -1,5 +1,5 @@
 import Container from '@/components/layout/Container'
-import { blogs } from '@/utils/blog'
+import { blogs, medication_blogs, weight_blogs } from '@/utils/blog'
 import { Clock, Search } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
@@ -54,6 +54,90 @@ const Blogs = () => {
                         </h1>
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 items-stretch'>
                             {blogs.map((item, index) => (
+                                <div className=''>
+                                    <Image
+                                        src={item.image}
+                                        width={350}
+                                        height={280}
+                                        alt='blog-igm'
+                                        className='rounded-tl-2xl rounded-tr-2xl object-fit w-full'
+                                    />
+                                    <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
+                                        <h2 className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                            {item.title}
+                                        </h2>
+                                        <p className='para mt-6 flex flex-row items-center gap-2'>
+                                            <span>
+                                                <Clock size={15} color='#8d69c9' />
+                                            </span>
+                                            9 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
+            <section className='pb-14 mt-5'>
+                <Container>
+                    <div className='w-full h-full'>
+                        <div className='flex flex-row items-center justify-between'>
+                            <div className='flex flex-row gap-2 items-center'>
+                                <Image src={"https://www.mayfairweightlossclinic.co.uk/wp-content/uploads/2025/07/weight.svg"} width={50} height={50} alt='imae' />
+                                <h1 className='text-xl md:text-[28px] text-[#160647] font-bold'>
+                                    Weight
+                                </h1>
+                            </div>
+                            <button className='bg-white border-[1px] border-[#8d69c9] rounded-full hover:bg-[#8d69c9] transition-all delay-75 px-5 py-2.5 cursor-pointer text-[#8d69c9] hover:text-white'>
+                                Explore Weight
+                            </button>
+                        </div>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 items-stretch'>
+                            {weight_blogs.map((item, index) => (
+                                <div className=''>
+                                    <Image
+                                        src={item.image}
+                                        width={350}
+                                        height={280}
+                                        alt='blog-igm'
+                                        className='rounded-tl-2xl rounded-tr-2xl object-fit w-full'
+                                    />
+                                    <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
+                                        <h2 className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                            {item.title}
+                                        </h2>
+                                        <p className='para mt-6 flex flex-row items-center gap-2'>
+                                            <span>
+                                                <Clock size={15} color='#8d69c9' />
+                                            </span>
+                                            9 min read
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
+            <section className='pb-14 mt-5'>
+                <Container>
+                    <div className='w-full h-full'>
+                        <div className='flex flex-row items-center justify-between'>
+                            <div className='flex flex-row gap-2 items-center'>
+                                <Image src={"https://www.mayfairweightlossclinic.co.uk/wp-content/uploads/2025/07/medication.svg"} width={50} height={50} alt='imae' />
+                                <h1 className='text-xl md:text-[28px] text-[#160647] font-bold'>
+                                    Medication
+                                </h1>
+                            </div>
+                            <button className='bg-white border-[1px] border-[#8d69c9] rounded-full hover:bg-[#8d69c9] transition-all delay-75 px-5 py-2.5 cursor-pointer text-[#8d69c9] hover:text-white'>
+                                Explore Medication
+                            </button>
+                        </div>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 mt-5 items-stretch'>
+                            {medication_blogs.map((item, index) => (
                                 <div className=''>
                                     <Image
                                         src={item.image}
