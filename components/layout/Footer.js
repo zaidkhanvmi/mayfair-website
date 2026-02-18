@@ -68,7 +68,9 @@ const Footer = () => {
                   placeholder="Email Address"
                   className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none"
                 />
-                <button className="bg-purple-600 text-white px-5 rounded-r-md">
+                <button
+                  type="button"
+                  className="cursor-pointer bg-purple-600 text-white px-5 rounded-r-md">
                   Subscribe
                 </button>
               </div>
@@ -102,12 +104,12 @@ const Footer = () => {
               {/* Payment & Certifications */}
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 my-6">
 
-                <Image src="/footer1.svg" alt="amex" width={50} height={50} />
-                <Image src="/footer2.svg" alt="mastercard" width={50} height={50} />
-                <Image src="/footer3.svg" alt="visa" width={50} height={50} />
-                <Image src="/footer4.png" alt="dmca" width={50} height={50} />
-                <Image src="/footer5.jpg" alt="pharmacy" width={50} height={50} />
-                <Image src="/footer6.png" alt="legitscript" width={50} height={50} />
+                <Image src="/footer1.svg" alt="amex" width={50} height={50} className="cursor-pointer"/>
+                <Image src="/footer2.svg" alt="mastercard" width={50} height={50} className="cursor-pointer"/>
+                <Image src="/footer3.svg" alt="visa" width={50} height={50} className="cursor-pointer"/>
+                <Image src="/footer4.png" alt="dmca" width={50} height={50} className="cursor-pointer"/>
+                <Image src="/footer5.jpg" alt="pharmacy" width={50} height={50} className="cursor-pointer"/>
+                <Image src="/footer6.png" alt="legitscript" width={50} height={50} className="cursor-pointer"/>
 
               </div>
             </div>

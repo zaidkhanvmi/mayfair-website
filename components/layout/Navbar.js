@@ -41,6 +41,7 @@ const Navbar = () => {
 
             <button
               type="button"
+              onClick={() => router.push("https://dynamic-treacle-887309.netlify.app/start-consultation/")}
               className="text-base text-[#343a40] font-medium md:shadow-md flex items-center gap-2 rounded px-2 md:px-4 py-2 cursor-pointer transition-all hover:shadow-xl">
               <span>
                 <LogIn size={15} color={"#f7a400"} />
@@ -111,7 +112,8 @@ const Navbar = () => {
         </div>
 
         <Link
-          href="/#"
+          target="_blank"
+          href="https://dynamic-treacle-887309.netlify.app/start-consultation/"
           className={`py-3 lg:py-5 px-5 lg:px-7.5 text-white text-base font-medium bg-[#7b50c0] rounded-r-full transition-all flex flex-row items-center gap-2`}
         >
           <span>

@@ -3,9 +3,12 @@
 import { ChevronLeft, ChevronRight, Lock, Stethoscope, Truck } from "lucide-react";
 import Container from "../layout/Container";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Hero = () => {
     const [current, setCurrent] = useState(0);
+    const router = useRouter();
 
     const slides = [
         "UK based clinical team",
@@ -67,7 +70,10 @@ const Hero = () => {
                             UK based clinical team and pharmacy all in one place
                         </p>
 
-                        <button className="mt-6 rounded-full bg-[#7b50c0] px-8 py-3 text-white font-medium hover:bg-[#7b50c0e5] transition cursor-pointer w-full md:w-auto">
+                        <button
+                            type="button"
+                            onClick={() => router.push("/available-treatments")}
+                            className="mt-6 rounded-full bg-[#7b50c0] px-8 py-3 text-white font-medium hover:bg-[#7b50c0e5] transition cursor-pointer w-full md:w-auto">
                             View Treatments
                         </button>
                     </div>
