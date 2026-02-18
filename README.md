@@ -1,40 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## Mayfair Weight Loss Clinic – Marketing Website
 
-## Getting Started
+This repository contains the marketing and information website for **Mayfair Weight Loss Clinic** – a modern, conversion‑focused site that showcases treatments, explains the clinic’s approach, and guides visitors into starting an online consultation.
 
-First, run the development server:
+The site is built with **Next.js**, **React**, and **Tailwind CSS**, and is optimised for performance, accessibility, and SEO.
+
+---
+
+## ✨ Features
+
+- **Clinic‑focused content structure**  
+  - Home page with clear value proposition and hero section  
+  - Weight loss treatments overview page  
+  - About the clinic / team information  
+  - FAQs and help/support content  
+  - Blog section for articles and educational posts  
+
+- **Guided conversion flow**  
+  - Prominent “Start Consultation” / “Login” entry points  
+  - External link to the consultation platform  
+  - Clear navigation with active link states
+
+- **Responsive UI**  
+  - Fully responsive layout for mobile, tablet, and desktop  
+  - Mobile menu with smooth dropdown experience  
+  - Desktop navbar with pill‑shaped gradient background
+
+- **Modern tech stack**  
+  - Next.js 16 (Pages Router)  
+  - React 19  
+  - Tailwind CSS 4 for styling  
+  - `lucide-react` for icons  
+  - `react-hook-form` for form handling (where applicable)  
+
+---
+
+## 🧱 Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)  
+- **Language**: JavaScript / React  
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)  
+- **Icons**: [lucide-react](https://lucide.dev/)  
+- **Forms**: [react-hook-form](https://react-hook-form.com/)  
+
+---
+
+## 🚀 Getting Started (Local Development)
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+By default the app will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 📁 Project Structure (High Level)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Some key areas of the project:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `components/` – Shared UI components  
+  - `layout/Navbar.js` – Main navigation bar used across pages
+- `pages/` – Next.js pages (home, treatments, about, FAQs, blog, contact, etc.)  
+- `public/` – Static assets such as the clinic logo and images  
+- `styles/` / Tailwind config – Global styles and design tokens  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+The app can be deployed to any platform that supports Next.js (e.g. Vercel, Netlify, custom Node server).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Typical production build steps:
 
-## Deploy on Vercel
+```bash
+npm run build
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Make sure that any environment variables (API keys, analytics, etc.) are properly configured in your hosting provider.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
+
+## 🧪 Quality & Best Practices
+
+- Semantic HTML for improved accessibility  
+- Mobile‑first, responsive design  
+- Reusable components for navigation and layout  
+- ESLint configuration included via `eslint-config-next`  
+
+You can run linting locally with:
+
+```bash
+npm run lint
+```
+
+---
+
+## 📣 Contributing / Handover Notes
+
+- **Design changes**: Update Tailwind utility classes in the relevant components (e.g. navbar, buttons, sections).  
+- **Content updates**:  
+  - Simple copy changes can usually be made directly in the corresponding `pages/` file or in shared components.  
+  - Blog or FAQ items may be managed via separate components or data files, depending on how you extend the project.  
+- **New pages**: Create a new file in `pages/` (e.g. `pages/new-page.js`) and link it via the navbar or internal CTAs.
+
+If you are taking over this project, you can treat this README as a starting point and expand it with more detailed content architecture, analytics setup, or CMS integration details as the site evolves.
