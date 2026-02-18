@@ -4,7 +4,6 @@ import { Clock, Search } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import BlogsCarousal from './blogs-carousal'
 
 const Blogs = () => {
     return (
@@ -16,7 +15,7 @@ const Blogs = () => {
                             Blogs
                         </h1>
                         <div className='text-xl md:text-3xl text-[#160647] font-bold flex flex-col gap-3 mt-10'>
-                            <h2>
+                            <h2 className='text-xl md:text-2xl'>
                                 Browse by Category
                             </h2>
                             <div className='flex flex-col gap-5 md:flex-row items-center justify-between'>
@@ -31,7 +30,7 @@ const Blogs = () => {
                                         Weight
                                     </button>
                                 </div>
-                                <div className="relative max-w-xl bg-white rounded-full outline-none border-none">
+                                <div className="relative max-w-xl bg-white rounded-full outline-none border-none flex-[0.5]">
                                     <Search
                                         className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
                                         size={18}
@@ -39,7 +38,7 @@ const Blogs = () => {
                                     <input
                                         type="text"
                                         placeholder="Search for an article"
-                                        className="w-full text-base pl-12 pr-4 py-3 text-gray-700 placeholder-gray-500 focus:outline-none"
+                                        className="w-full text-base pl-12 pr-4 py-3 text-gray-500 focus:outline-none"
                                     />
                                 </div>
                             </div>
@@ -166,7 +165,6 @@ const Blogs = () => {
                 </Container>
             </section>
 
-            <BlogsCarousal />
         </>
     )
 }

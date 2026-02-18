@@ -4,7 +4,7 @@ import { blogs, weight_blogs, medication_blogs } from '@/utils/blog';
 import { ChevronLeft } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/router'
-import React from 'react'
+import BlogsCarousal from './blogs-carousal'
 
 const Page = () => {
     const router = useRouter();
@@ -12,15 +12,15 @@ const Page = () => {
 
     const finBlog = (slug) => {
         let blog = blogs.find(item => item.slug === slug);
-        if(!blog) blog = weight_blogs.find(item => item.slug === slug);
-        if(!blog) blog = medication_blogs.find(item=> item.slug === slug);
+        if (!blog) blog = weight_blogs.find(item => item.slug === slug);
+        if (!blog) blog = medication_blogs.find(item => item.slug === slug);
         return blog
     }
 
     const blog = finBlog(slug);
 
-    if(!blog){
-        return(
+    if (!blog) {
+        return (
             <p className='text-black text-center'>
                 Blog Not Found!
             </p>
@@ -73,6 +73,9 @@ const Page = () => {
             </section>
 
             <WegovyTableContent />
+
+            {/* Carousal */}
+            <BlogsCarousal />
         </>
     )
 }

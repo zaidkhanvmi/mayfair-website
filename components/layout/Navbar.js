@@ -111,7 +111,7 @@ const Navbar = () => {
         </div>
 
         <Link
-          href="/login"
+          href="/#"
           className={`py-3 lg:py-5 px-5 lg:px-7.5 text-white text-base font-medium bg-[#7b50c0] rounded-r-full transition-all flex flex-row items-center gap-2`}
         >
           <span>
