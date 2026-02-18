@@ -1,5 +1,8 @@
 import React from 'react'
 import Container from '../layout/Container'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 const Testimonials = () => {
 
@@ -28,18 +31,31 @@ const Testimonials = () => {
                     We pride ourselves on great customer service. Here are some comments left by our customers.
                 </p>
                 {/* Testimonials */}
-                <div className='flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible'>
+                <Swiper
+                    modules={[Autoplay]}
+                    spaceBetween={20}
+                    slidesPerView={1.2}
+                    breakpoints={{
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 }
+                    }}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    loop={true}
+                >
                     {testimonials_data.map((item, index) => (
-                        <div className='bg-white rounded p-5 w-[200px] md:w-auto md:py-7.5 md:px-15 '>
-                            <p className='text-base text-[#3e4555] leading-5 font-normal'>
-                                {item.para}
-                            </p>
-                            <h3 className='text-[#3e4555] font-medium mt-2'>
-                                {item.name}
-                            </h3>
-                        </div>
+                        <SwiperSlide key={index}>
+                            <div className='bg-white rounded p-5 md:py-7.5 md:px-15'>
+                                <p className='text-base text-[#3e4555] leading-5 font-normal'>
+                                    {item.para}
+                                </p>
+                                <h3 className='text-[#3e4555] font-medium mt-2'>
+                                    {item.name}
+                                </h3>
+                            </div>
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
+
             </Container>
         </section>
     )

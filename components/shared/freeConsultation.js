@@ -1,5 +1,6 @@
 import React from 'react'
 import Container from '../layout/Container'
+import Link from 'next/link'
 
 const FreeConsultation = () => {
     return (
@@ -14,9 +15,9 @@ const FreeConsultation = () => {
                             Speak with our clinical team and get personalised advice.
                         </p>
                     </div>
-                    <button className='uppercase rounded-full bg-[#5b45a7] px-7 py-3 text-white cursor-pointer w-full md:w-auto mt-5'>
+                    <Link href={"/available-treatments"} className='uppercase rounded-full bg-[#5b45a7] px-7 py-3 text-white cursor-pointer w-full md:w-auto mt-5'>
                         view treatments
-                    </button>
+                    </Link>
                 </div>
             </Container>
         </section>

@@ -7,9 +7,9 @@ const Contact = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className='bg-[#dacfff] md:-mt-7 min-h-[300px]'>
+            <section className='bg-[#dacfff] md:-mt-7 min-h-[200px] md:min-h-[300px]'>
                 <Container>
-                    <div className='text-center pt-[100px]'>
+                    <div className='text-center pt-14 md:pt-[100px]'>
                         <h1 className='text-2xl text-[40px] text-[#160647] font-bold'>
                             Contact
                         </h1>

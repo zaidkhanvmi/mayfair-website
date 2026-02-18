@@ -148,11 +148,11 @@ const TransparencySection = () => {
 
             <section className="pt-14 bg-[#e6f0fc] flex justify-end">
 
-                <div className='max-w-[1140px]'>
+                <div className='max-w-[1140px] mx-auto'>
 
                     <div className="flex flex-col gap-20 md:flex-row items-center justify-between">
                         {/* Left content */}
-                        <div className="flex flex-col gap-6 flex-1 max-w-xl">
+                        <div className="flex flex-col gap-6 flex-1 max-w-xl p-5">
                             <h2 className="text-2xl md:text-4xl text-center md:text-left font-extrabold text-black leading-tight">
                                 Supporting Long-Term Weight Management
                             </h2>

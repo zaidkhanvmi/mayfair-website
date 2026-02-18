@@ -8,7 +8,7 @@ const TakeMeToTop = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            setShow(window.scrollY > 300);  
+            setShow(window.scrollY > 300);
         }
 
         window.addEventListener("scroll", onScroll);
@@ -24,7 +24,7 @@ const TakeMeToTop = () => {
     return (
         <div
             onClick={scrollToTop}
-            className="bg-[#8d69c9] p-3 fixed bottom-5 right-5 text-white rounded-lg cursor-pointer shadow-lg hover:bg-[#7a59b8] transition"
+            className="bg-[#8d69c9] p-3 fixed bottom-5 right-5 text-white rounded-lg cursor-pointer shadow-lg hover:bg-[#7a59b8] transition z-[500]"
         >
             <ArrowUp size={25} />
         </div>

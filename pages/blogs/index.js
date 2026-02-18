@@ -8,14 +8,14 @@ import React from 'react'
 const Blogs = () => {
     return (
         <>
-            <section className='bg-[#dacfff] md:-mt-7 min-h-[370px]'>
+            <section className='bg-[#dacfff] md:-mt-7 min-h-[200px] md:min-h-[370px]'>
                 <Container>
-                    <div className='w-full h-full pt-[100px] pb-10 border-b-[1px] border-[#343A404D]'>
-                        <h1 className='text-3xl md:text-[40px] text-[#160647] font-bold'>
+                    <div className='w-full h-full pt-10 md:pt-[100px] pb-10 border-b-[1px] border-[#343A404D]'>
+                        <h1 className='text-3xl text-center md:text-left md:text-[40px] text-[#160647] font-bold'>
                             Blogs
                         </h1>
-                        <div className='text-xl md:text-3xl text-[#160647] font-bold flex flex-col gap-3 mt-10'>
-                            <h2 className='text-xl md:text-2xl'>
+                        <div className='text-xl md:text-3xl text-[#160647] font-bold flex flex-col gap-3 mt-5 md:mt-10'>
+                            <h2 className='text-xl md:text-2xl text-center md:text-left'>
                                 Browse by Category
                             </h2>
                             <div className='flex flex-col gap-5 md:flex-row items-center justify-between'>
@@ -30,7 +30,7 @@ const Blogs = () => {
                                         Weight
                                     </button>
                                 </div>
-                                <div className="relative max-w-xl bg-white rounded-full outline-none border-none flex-[0.5]">
+                                <div className="relative max-w-xl bg-white rounded-full outline-none border-none flex-[0.5] w-full md:w-auto">
                                     <Search
                                         className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
                                         size={18}

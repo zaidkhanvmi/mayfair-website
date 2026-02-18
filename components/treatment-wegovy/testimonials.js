@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Container from "../layout/Container";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
+import "swiper/css"; // Import Swiper styles
 
 const testimonials = [
     {
@@ -18,25 +20,12 @@ const testimonials = [
         text: "Ordered on Tuesday and it arrived on Wednesday morning. Very well packed. Excellent service.",
     },
     {
-        name: "AMY",
-        text: "Ordered on Tuesday and it arrived on Wednesday morning. Very well packed. Excellent service.",
+        name: "JAMES",
+        text: "Great experience overall! The product worked perfectly and arrived on time.",
     },
-
 ];
 
 const Testimonials = () => {
-    const [current, setCurrent] = useState(0);
-
-    const next = () => {
-        setCurrent((prev) => (prev + 1) % testimonials.length);
-    };
-
-    const prev = () => {
-        setCurrent((prev) =>
-            prev === 0 ? testimonials.length - 1 : prev - 1
-        );
-    };
-
     return (
         <section className="mt-5 py-12 bg-white rounded">
             <Container>
@@ -52,45 +41,58 @@ const Testimonials = () => {
                         </p>
                     </div>
 
-                    {/* Slider Wrapper */}
+                    {/* Swiper Wrapper */}
                     <div className="relative flex items-center justify-center">
+                        {/* Swiper Component */}
+                        <Swiper
+                            spaceBetween={30} // Space between slides
+                            slidesPerView={3} // Number of slides visible at a time
+                            loop={true} // Infinite loop
+                            navigation={{ // Swiper built-in navigation
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            }}
+                            breakpoints={{ // Responsive design for different screen sizes
+                                640: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 10,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 30,
+                                },
+                            }}
+                            className="w-full"
+                        >
+                            {testimonials.map((item, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className="bg-white rounded-lg shadow-md p-6 text-center">
+                                        <h4 className="font-semibold text-sm tracking-wide mb-3">
+                                            {item.name}
+                                        </h4>
+                                        <p className="text-sm text-gray-600 leading-relaxed">
+                                            {item.text}
+                                        </p>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
 
-                        {/* Left Button */}
+                        {/* Custom Navigation Buttons */}
                         <button
-                            onClick={prev}
-                            className="cursor-pointer absolute -left-4 md:-left-6 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition"
+                            className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition"
                         >
                             <ChevronLeft size={20} />
                         </button>
-
-                        {/* Testimonial Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                            {testimonials.slice(current, current + 3).map((item, index) => (
-                                <div
-                                    key={index}
-                                    className={`bg-white rounded-lg shadow-md p-6 text-center transition-all duration-300 ${index === current
-                                        ? "opacity-100 scale-100"
-                                        : "hidden md:block opacity-70 scale-95"
-                                        }`}
-                                >
-                                    <h4 className="font-semibold text-sm tracking-wide mb-3">
-                                        {item.name}
-                                    </h4>
-                                    <p className="text-sm text-gray-600 leading-relaxed">
-                                        {item.text}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Right Button */}
                         <button
-                            onClick={next}
-                            className="cursor-pointer absolute -right-4 md:-right-6 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition"
+                            className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition"
                         >
                             <ChevronRight size={20} />
                         </button>
-
                     </div>
                 </div>
             </Container>
