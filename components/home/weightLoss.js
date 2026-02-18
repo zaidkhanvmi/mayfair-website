@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Container from "../layout/Container"
 
 const WeightLoss = () => {
@@ -20,9 +21,11 @@ const WeightLoss = () => {
               backgroundImage: "url('/weightLossImg.png')",
             }}
           >
-            <button className="bg-[#5b45a7] rounded-full px-5 py-3 text-white font-medium">
+            <Link
+              href={"/available-treatments"}
+              className="cursor-pointer bg-[#5b45a7] rounded-full px-5 py-3 text-white font-medium">
               View Available Treatments
-            </button>
+            </Link>
           </div>
 
         </div>

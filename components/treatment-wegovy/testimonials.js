@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import Container from "../layout/Container";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
 import "swiper/css"; // Import Swiper styles
+import { Navigation } from "swiper/modules"; // Import Navigation module
 
 const testimonials = [
     {
@@ -25,7 +26,10 @@ const testimonials = [
     },
 ];
 
+
 const Testimonials = () => {
+    const swiperRef = useRef(null); // Swiper reference
+
     return (
         <section className="mt-5 py-12 bg-white rounded">
             <Container>
@@ -45,14 +49,13 @@ const Testimonials = () => {
                     <div className="relative flex items-center justify-center">
                         {/* Swiper Component */}
                         <Swiper
-                            spaceBetween={30} // Space between slides
-                            slidesPerView={3} // Number of slides visible at a time
-                            loop={true} // Infinite loop
-                            navigation={{ // Swiper built-in navigation
-                                nextEl: ".swiper-button-next",
-                                prevEl: ".swiper-button-prev",
-                            }}
-                            breakpoints={{ // Responsive design for different screen sizes
+                            spaceBetween={30}
+                            slidesPerView={3}
+                            loop={true}
+                            navigation={false} // Disable default navigation
+                            modules={[Navigation]} // Use Navigation module
+                            autoplay={{ delay: 3000 }}
+                            breakpoints={{
                                 640: {
                                     slidesPerView: 1,
                                     spaceBetween: 10,
@@ -66,6 +69,7 @@ const Testimonials = () => {
                                     spaceBetween: 30,
                                 },
                             }}
+                            onSwiper={(swiper) => swiperRef.current = swiper} // Capture the Swiper instance
                             className="w-full"
                         >
                             {testimonials.map((item, index) => (
@@ -84,12 +88,14 @@ const Testimonials = () => {
 
                         {/* Custom Navigation Buttons */}
                         <button
-                            className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition"
+                            onClick={() => swiperRef.current?.slidePrev()} // Ensure swiperRef is not null before calling slidePrev()
+                            className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition cursor-pointer"
                         >
                             <ChevronLeft size={20} />
                         </button>
                         <button
-                            className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition"
+                            onClick={() => swiperRef.current?.slideNext()} // Ensure swiperRef is not null before calling slideNext()
+                            className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-purple-500 z-[100] hover:bg-purple-600 text-white p-2 rounded-full shadow-md transition cursor-pointer"
                         >
                             <ChevronRight size={20} />
                         </button>
