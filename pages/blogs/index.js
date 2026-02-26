@@ -55,7 +55,7 @@ const Blogs = () => {
                         </h1>
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 md:gap-y-0 mt-5 items-stretch'>
                             {blogs.map((item, index) => (
-                                <div key={index} className='w-full h-full'>
+                                <Link key={index} href={`/blogs/${item.slug}`} className='group w-full h-full'>
                                     <Image
                                         src={item.image}
                                         width={350}
@@ -64,9 +64,9 @@ const Blogs = () => {
                                         className='rounded-tl-2xl rounded-tr-2xl object-cover w-full'
                                     />
                                     <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
-                                        <Link href={`/blogs/${item.slug}`} className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                        <h3 className='text-[#212529] cursor-pointer text-xl group-hover:underline font-bold'>
                                             {item.title}
-                                        </Link>
+                                        </h3>
                                         <p className='para mt-6 flex flex-row items-center gap-2'>
                                             <span>
                                                 <Clock size={15} color='#8d69c9' />
@@ -74,7 +74,7 @@ const Blogs = () => {
                                             9 min read
                                         </p>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -97,7 +97,7 @@ const Blogs = () => {
                         </div>
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 md:gap-y-0 mt-5 items-stretch'>
                             {weight_blogs.map((item, index) => (
-                                <div key={index} className=''>
+                                <Link href={`/blogs/${item.slug}`} key={index} className='group'>
                                     <Image
                                         src={item.image}
                                         width={350}
@@ -106,9 +106,9 @@ const Blogs = () => {
                                         className='rounded-tl-2xl rounded-tr-2xl object-fit w-full'
                                     />
                                     <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
-                                        <Link href={`/blogs/${item.slug}`} className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                        <h3 className='text-[#212529] cursor-pointer text-xl group-hover:underline font-bold'>
                                             {item.title}
-                                        </Link>
+                                        </h3>
                                         <p className='para mt-6 flex flex-row items-center gap-2'>
                                             <span>
                                                 <Clock size={15} color='#8d69c9' />
@@ -116,7 +116,7 @@ const Blogs = () => {
                                             9 min read
                                         </p>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -139,7 +139,7 @@ const Blogs = () => {
                         </div>
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5 md:gap-y-0 mt-5 items-stretch'>
                             {medication_blogs.map((item, index) => (
-                                <div key={index} className=''>
+                                <Link href={`/blogs/${item.slug}`} key={index} className='group'>
                                     <Image
                                         src={item.image}
                                         width={350}
@@ -148,9 +148,9 @@ const Blogs = () => {
                                         className='rounded-tl-2xl rounded-tr-2xl object-fit w-full'
                                     />
                                     <div className='bg-[#f2f3f5] rounded-bl-2xl rounded-br-2xl p-5'>
-                                        <Link href={`/blogs/${item.slug}`} className='text-[#212529] cursor-pointer text-xl hover:underline font-bold'>
+                                        <h3 className='text-[#212529] cursor-pointer text-xl group-hover:underline font-bold'>
                                             {item.title}
-                                        </Link>
+                                        </h3>
                                         <p className='para mt-6 flex flex-row items-center gap-2'>
                                             <span>
                                                 <Clock size={15} color='#8d69c9' />
@@ -158,7 +158,7 @@ const Blogs = () => {
                                             9 min read
                                         </p>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>
